@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudioHouse Web</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontSize: {
+              quote: "12pt",
+              body: "10pt",
+              stars: "54pt",
+              header: "14pt",
+            },
+            fontFamily: {
+              courier: ["Courier Regular", "Courier", "monospace"],
+              arial: ["Arial", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-white text-black">
+    <!-- LOGO + HAMBURGER -->
+    <header
+      class="fixed top-0 w-full mb-50 bg-white px-5 py-2.5 shadow-md z-50"
+    >
+      <div class="flex flex-col">
+        <div class="w-full">
+          <h1>
+            <img
+              src="src/logo.png"
+              alt="StudioHouse Logo"
+              class="h-auto max-h-[200px] w-full object-contain object-left"
+            />
+          </h1>
+          <button class="w-full flex justify-start px-5 py-3 menu-toggle">
+            <img src="src/hamburger.png" alt="Menu" class="w-[25px] h-[25px]" />
+          </button>
+        </div>
+        <nav class="w-full mt-5 main-nav hidden">
+          <ul
+            class="flex flex-col gap-4 border border-gray-200 p-4 rounded bg-white shadow-lg"
+          >
+            <li>
+              <a
+                href="#home"
+                class="text-blue-800 font-bold block hover:bg-gray-50 p-2"
+                >HOME</a
+              >
+            </li>
+            <li>
+              <a
+                href="#our-approach"
+                class="text-blue-800 font-bold block hover:bg-gray-50 p-2"
+                >OUR APPROACH</a
+              >
+            </li>
+            <li>
+              <a
+                href="#submissions"
+                class="text-blue-800 font-bold block hover:bg-gray-50 p-2"
+                >PROJECT SUBMISSIONS</a
+              >
+            </li>
+            <li>
+              <a
+                href="#agent-access"
+                class="text-blue-800 font-bold block hover:bg-gray-50 p-2"
+                >AGENT ACCESS</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-blue-800 font-bold block hover:bg-gray-50 p-2"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- QUOTE -->
+    <section
+      id="home"
+      class="mt-[300px] lg:mt-[350px] xl:mt-[400px] pt-16 lg:pt-24 pb-0 bg-white"
+    >
+      <div class="max-w-[1200px] mx-auto px-3">
+        <div class="quote-container">
+          <blockquote>
+            <p class="font-courier italic text-quote mb-2.5">
+              "Success is not an easy fantasy game.<br />Success takes skill,
+              vision, and perseverance."
+            </p>
+            <cite class="font-arial font-black text-quote block my-10">
+              Michael David McGuire<br /><span>New York</span>
+            </cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- RED STARS -->
+
+    <section class="w-full bg-white my-5">
+      <div class="max-w-[1200px] mx-auto pl-[5px]">
+        <p class="font-courier font-bold text-stars text-red-600">***</p>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENTS -->
+    <main class="py-5">
+      <div class="max-w-[1200px] mx-auto px-10">
+        <!-- SECTION 1:  OUR APPROACH -->
+        <section id="our-approach" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header text-blue-800 font-bold mb-5">
+            OUR APPROACH
+          </h2>
+          <p class="font-courier text-body mb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+            <br />
+            <br />
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p class="font-courier text-body mb-0">
+            Connect on LinkedIn For More Details
+          </p>
+          <a
+            href="https://www.linkedin.com/in/michael-david-mcguire/"
+            target="_blank"
+            class="font-courier text-body text-blue-800"
+            >Learn More</a
+          >
+        </section>
+
+        <!-- SECTION 2: PROJECT AND SCRIPTS SUBMISSIONS -->
+        <section id="submissions" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header text-blue-800 font-bold mb-5">
+            PROJECT and SCRIPTS SUBMISSIONS
+          </h2>
+          <p class="font-courier text-body mb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales
+            libero et nisl condimentum, vel suscipit sapien tincidunt. Nulla
+            elit enim, aliquet sed aliquet eu, interdum ac neque. Ut in tortor
+            egestas, accumsan leo euismod, eleifend eros. Nunc scelerisque
+            tincidunt dui, quis sagittis lacus ullamcorper sed. Nam eu
+            condimentum leo, id vulputate nulla.
+            <br />
+            <br />
+            Curabitur quis orci in augue dignissim pellentesque. Nunc
+            scelerisque vulputate lorem sit amet vestibulum. Phasellus maximus
+            velit ut odio feugiat, vel sollicitudin lacus blandit. Maecenas
+            luctus non mauris sit amet sagittis. Etiam metus leo, porta et odio
+            quis, imperdiet pulvinar neque. Nunc eu augue at nulla feugiat
+            sollicitudin ac nec mauris. Praesent
+          </p>
+          <p class="font-courier text-body mb-0">
+            Request Detailed Submission Instructions by Email-
+          </p>
+          <a
+            href="mailto:ProjectDevelopment@StudioHouseMedia.com?subject=Detailed%20Submission%20Request"
+            class="font-courier text-body text-blue-800"
+            >ProjectDevelopment@StudioHouseMedia.com</a
+          >
+        </section>
+
+        <!-- RED STARS -->
+
+        <section class="w-full bg-white my-5">
+          <div class="max-w-[1200px] mx-auto pl-[5px]">
+            <p class="font-courier font-bold text-stars text-red-600">***</p>
+          </div>
+        </section>
+
+        <!-- SECTION 3: AGENT ACCESS -->
+
+        <section id="agent-access" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header text-blue-800 font-bold mb-5">
+            AGENT ACCESS
+          </h2>
+          <p class="font-courier text-body mb-5">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+          <p class="font-arial font-bold text-black mb-0">
+            Over 300 TV Shows and Feature Films.
+          </p>
+        </section>
+
+        <!-- SECTION 4: FILMOGRAPHY -->
+
+        <section id="filmography" class="-mt-5 mb-5 pt-12">
+          <div
+            class="movie-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2"
+          >
+            <!-- Movies will be rendered here by JavaScript in script.py -->
+          </div>
+        </section>
+
+        <!-- SECTION 5: SOAPS AND EPISODIC TV SHOWS -->
+
+        <section id="tv-shows" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header text-black font-bold mb-5">
+            SOAPS and EPISODIC TV SHOWS
+          </h2>
+          <p class="font-courier text-body text-blue-800 leading-relaxed">
+            In the Heat of the Night, Matlock, Northern Expose, Streets of San
+            Francisco, Young Indiana Jones, Christy, Young & Restless, Days of
+            Our Lives, General Hospital, Another World, Unsolved Mysteries, Bert
+            D'Angelo Suoperstar, Rescue 911, America's Most Wanted, Unclaimed
+            Fortunes, Babylon 5, Twighlight Zone, Dr. Quinn Medicine Woman, I'll
+            Fly Away, Renegade, ABC Afterschool Special, Against All Odds, It
+            Had to be You, Down Home, Case Closed, Everybody Loves Raymond,
+            Murder She Wrote, Empire, Twin Peaks.
+          </p>
+        </section>
+
+        <!-- SECTION 6: HUNDREDS OF COMMERCIALS -->
+
+        <section id="commercials" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header font-bold mb-5">
+            HUNDREDS of COMMERCIALS
+          </h2>
+          <p class="font-courier text-body text-blue-800 leading-relaxed">
+            Kellogg's, Kraft, 7-Up, Pepsi, Sprite, Tecate Beer, JC Penney, CNN,
+            Nentendo, Matel Toys, McDonald's, Hardees, BoJangle Chicken,
+            Macaroni's Restaurant, Jungle Jim Pizza, Papa John's Pizza, Apple
+            Computers, Microsoft, Ocean Spray, Hanes, Boeing, Cub Foods, Kroger,
+            Safeway, Bi-LO, Ingles, Food Lion, Tru-Value Hardware, Builder's
+            Square, B. Dalton Books, Red Devil Paint, 50% Off Stores, American
+            Express, Mr. Cash, Rainier Beer, Boyd's Coffee, Maxwell House
+            Coffee, Thom McAnn Shoes, American Harvester, US Postal Service, US
+            Navy, US Army, Ford Trucks, Chevrolet, VW of America, Nissan,
+            Pontiac, Honda Dealers, Toyota, Chrysler Jeep Eagle, Lowes, Ernst,
+            REI Sporting Goods, Belk's, Pennsylvania House, Glamour Shots,
+            Skittles, M&M Candies, Toll House Cookies, Tula Chocolates, AT&T, US
+            West, Sprint, Northern TelCom, ConTel Pagers, WLOS-TV, KOMO-TV,
+            KGET-TV, KGO-TV, WBAL-TV, Love Bug, Sunshine Cameras, USAA
+            Insurance, Charter Hospitals, US Health Care, Option Care, Baptist
+            Medical, Puget Power, Carolina Power & Light, West One Bank, CTX
+            Mortgage, Centura Bank, Canada Wonderland, Schlitterbahaun, State of
+            New York, Time-Life Music, Los Angeles Times, TV Guide.
+          </p>
+        </section>
+
+        <!-- RED STARS -->
+
+        <section class="w-full bg-white my-5">
+          <div class="max-w-[1200px] mx-auto pl-[5px]">
+            <p class="font-courier font-bold text-stars text-red-600">***</p>
+          </div>
+        </section>
+
+        <!-- SECTION 7: THE BEST SUCCESS RATE IN THE INDUSTRY -->
+
+        <section id="success-rate" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header text-black font-bold mb-5">
+            The Best Success Rate in the Industry
+          </h2>
+          <p class="font-courier text-body leading-relaxed">
+            Good acting and successful auditioning are two entirely and distinct
+            skill sets. Our unique approach to the business of acting translates
+            directly to added cold reading and audition confidence, which helps
+            our clients win their first national auditions... which, in turn, is
+            the key to building a real career. Our past clients have earned in
+            the $100,000!
+          </p>
+
+          <p class="font-courier text-body mb-0 mt-5">
+            Request Scheduling and Direct Contact Information-
+          </p>
+          <a
+            href="mailto:Casting@StudioHouseMedia.com?subject=Script%20Submission%20Request"
+            class="font-courier text-body text-blue-800"
+            >Casting@StudioHouseMedia.com</a
+          >
+        </section>
+
+        <!-- SUB-SEC: MORE INFO -->
+
+        <section id="more-info" class="-mt-5 mb-5 pt-12">
+          <div class="flex">
+            <hr class="border border-red-600 my-5 w-24" />
+          </div>
+          <h2 class="font-arial text-header text-black font-bold">
+            Watch this Video for More Information
+          </h2>
+          <a
+            href="https://www.imdb.com/name/nm4528542/"
+            target="_blank"
+            class="font-courier text-body text-blue-800"
+            >click here</a
+          >
+        </section>
+
+        <!-- SECTION 7: CONTACT US  -->
+        <section id="contact" class="-mt-5 mb-5 pt-20">
+          <h2 class="font-arial text-header text-blue-800 font-bold mb-5">
+            CONTACT US
+          </h2>
+          <p class="font-courier text-body leading-relaxed">
+            StudioHouse Media presents 8306 Wilshire Blvd Bevertly Hills, CA
+            90211
+
+            <br />
+            <br />
+            <span
+              class="cursor-pointer hover:text-blue-800 transition-colors"
+              id="phoneNumber"
+              title="Click to copy"
+              >(323) 656-3000</span
+            >
+          </p>
+        </section>
+
+        <!-- SUB-SECTION: MEDIA LIST -->
+
+        <section id="media-list" class="-mt-5 mb-5 pt-12">
+          <h2 class="font-arial text-header text-black font-bold">
+            For Media List
+          </h2>
+          <a
+            href="https://www.imdb.com/name/nm4528542/"
+            target="_blank"
+            class="font-courier text-body text-red-600"
+            >click here</a
+          >
+        </section>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
