@@ -26,7 +26,7 @@ header h1 {
 
 header img {
   height: auto;
-  max-height: 60px;
+  max-height: 80px; /* Increased from 60px */
   width: auto;
   object-fit: contain;
   object-position: left;
@@ -36,15 +36,15 @@ header img {
   width: auto;
   display: flex;
   justify-content: flex-start;
-  padding: 3px;
+  padding: 5px; /* Increased from 3px */
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .menu-toggle img {
-  width: 25px;
-  height: 25px;
+  width: 35px; /* Increased from 25px */
+  height: 35px; /* Increased from 25px */
 }
 
 .main-nav {
@@ -237,6 +237,15 @@ a.font-courier.text-body.text-red-600 {
     margin-top: 120px;
     padding-top: 10px;
   }
+
+  header img {
+    max-height: 100px;
+  }
+
+  .menu-toggle img {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -250,6 +259,15 @@ a.font-courier.text-body.text-red-600 {
 
   .lg\:pt-10 {
     padding-top: 10px;
+  }
+
+  header img {
+    max-height: 120px;
+  }
+
+  .menu-toggle img {
+    width: 45px;
+    height: 45px;
   }
 }
 
