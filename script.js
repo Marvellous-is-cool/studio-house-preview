@@ -29,9 +29,19 @@ document.addEventListener("DOMContentLoaded", () => {
   // Toggle menu with animation
   menuToggle.addEventListener("click", (e) => {
     e.stopPropagation();
-    mainNav.classList.toggle("hidden");
-    mainNav.style.transition = "opacity 0.3s ease-in-out";
-    mainNav.style.opacity = mainNav.classList.contains("hidden") ? "0" : "1";
+    const isHidden = mainNav.classList.contains("hidden");
+
+    if (isHidden) {
+      mainNav.classList.remove("hidden");
+      setTimeout(() => {
+        mainNav.style.opacity = "1";
+      }, 10);
+    } else {
+      mainNav.style.opacity = "0";
+      setTimeout(() => {
+        mainNav.classList.add("hidden");
+      }, 300);
+    }
   });
 
   // Handle navigation click events
