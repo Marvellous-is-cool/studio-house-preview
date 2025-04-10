@@ -1,22 +1,35 @@
-/* Base styles */
+/* Base styles with better width containment */
 body {
   background-color: white;
   color: black;
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  padding-right: 2em; /* Add right padding to entire document */
+  max-width: 100%;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  box-sizing: border-box;
+}
+
+/* Ensure all elements respect border-box model */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 /* Header and Navigation */
 header {
   position: fixed;
   top: 0;
-  width: 100%;
+  left: 0;
+  width: calc(100% - 2em); /* Adjust width accounting for padding */
   background-color: white;
-  padding: 10px 3px;
+  padding: 5px 3px;
   border-bottom: 1px solid #e5e7eb;
   z-index: 50;
-  box-sizing: border-box;
+  overflow: hidden; /* Prevent logo overflow */
 }
 
 header h1 {
@@ -26,31 +39,40 @@ header h1 {
 
 header img {
   height: auto;
-  max-height: 100px; /* Increased base size for mobile */
-  width: auto;
+  max-height: clamp(100px, 15vw, 180px); /* Fluid responsive height */
+  width: 100%;
+  max-width: clamp(300px, 50vw, 550px); /* Fluid responsive width */
   object-fit: contain;
   object-position: left;
 }
 
 .menu-toggle {
-  width: auto;
+  position: relative;
   display: flex;
-  justify-content: flex-start;
-  padding: 8px; /* Increased padding for better touch target */
+  padding: 3px;
+  margin-top: 5px;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .menu-toggle img {
-  width: 40px; /* Increased base size for mobile */
-  height: 40px;
+  width: 65px;
+  height: 65px;
 }
 
+/* Navigation Overlay Positioning */
 .main-nav {
-  width: 100%;
-  margin-top: 5px;
-  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 50%; /* Center vertically with hamburger */
+  right: 0; /* Position to right of hamburger */
+  transform: translateY(-50%);
+  width: auto;
+  background: white;
+  z-index: 55; /* Higher than hamburger to overlay */
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .main-nav.hidden {
@@ -59,16 +81,18 @@ header img {
 }
 
 .main-nav ul {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  /* border: 1px solid #e5e7eb; */
-  padding: 4px;
+  flex-direction: column; /* Always vertical */
+  gap: 2px;
+  padding: 5px;
   margin: 0;
-  border-radius: 0.25rem;
-  /* background-color: white; */
-  /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
-  list-style: none;
+  background: white;
+  border-left: 1px solid #e5e7eb;
+  list-style: none; /* Explicitly remove dots */
+  list-style-type: none; /* Double ensure no dots in all browsers */
+}
+
+.main-nav li {
+  list-style-image: none; /* Triple ensure no dots in older browsers */
 }
 
 .main-nav a {
@@ -76,7 +100,7 @@ header img {
   font-weight: bold;
   text-decoration: none;
   display: block;
-  padding: 2px;
+  padding: 1px;
   transition: background-color 0.2s;
 }
 
@@ -87,12 +111,20 @@ header img {
 /* Main Content Spacing */
 .main-content {
   padding: 3px;
+  margin-left: 3px;
+  width: 100%;
+  max-width: 100%;
+  padding-left: 3px;
+  padding-right: 2em;
+  margin-left: 0;
+  margin-right: 0;
+  box-sizing: border-box;
 }
 
 /* Quote Section */
 #home {
-  margin-top: 100px;
-  padding-top: 10px;
+  margin-top: 200px; /* Adjusted to account for larger header */
+  padding-top: 20px;
   padding-bottom: 0;
   background-color: white;
 }
@@ -117,7 +149,8 @@ blockquote {
 blockquote p {
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
-  font-size: 12pt;
+  font-size: 18pt;
+  line-height: 1.3;
   margin-bottom: 2.5px;
 }
 
@@ -128,15 +161,16 @@ blockquote p {
 blockquote cite {
   font-family: Arial, sans-serif;
   font-weight: 900;
-  font-size: 12pt;
+  font-size: 14pt;
   display: block;
   margin: 10px 0;
+  font-style: normal;
 }
 
 .font-courier.font-bold.text-stars.text-red-600,
 p.font-courier.font-bold.text-stars.text-red-600 {
   font-family: "Courier Regular", Courier, monospace;
-  font-size: 58pt;
+  font-size: 72pt;
   margin: 0;
   color: red;
 }
@@ -144,8 +178,12 @@ p.font-courier.font-bold.text-stars.text-red-600 {
 /* Section Common Styling */
 section {
   margin-top: 3px;
-  margin-bottom: 4em;
+  margin-bottom: 2em;
   padding-left: 3px;
+  margin-left: 0;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Font Styles Based on HTML Classes */
@@ -172,10 +210,10 @@ h2.font-arial.text-header {
 /* Paragraph Text */
 .font-courier.text-body {
   font-family: "Courier Regular", Courier, monospace;
-  font-size: 10pt;
-  margin-bottom: 5px;
+  font-size: 12pt;
+  margin-bottom: 3px;
   padding-left: 3px;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 /* Reduce section divider spacing */
@@ -197,9 +235,10 @@ section#media-list {
 /* Movie Grid */
 .movie-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2px;
+  grid-template-columns: 1fr; /* Single column for mobile */
+  gap: 8px;
   padding-left: 3px;
+  width: 100%;
 }
 
 .movie-grid p {
@@ -223,36 +262,41 @@ a.font-courier.text-body.text-blue-800,
 a.font-courier.text-body.text-red-600 {
   text-decoration: none;
   padding-left: 3px;
+  margin-top: -3px;
+  display: block;
 }
 
 /* Responsive Design - Maintain Left Alignment and Spacing */
 @media (min-width: 768px) {
   .movie-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* Two columns for iPad/tablet */
+    gap: 12px;
   }
 
   #home {
-    margin-top: 120px;
+    margin-top: 220px;
     padding-top: 10px;
   }
 
   header img {
-    max-height: 120px;
+    max-height: 140px;
+    max-width: 450px;
   }
 
   .menu-toggle img {
-    width: 45px;
-    height: 45px;
+    width: 85px;
+    height: 85px;
   }
 }
 
 @media (min-width: 1024px) {
   .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+    gap: 15px;
   }
 
   #home {
-    margin-top: 150px;
+    margin-top: 240px;
   }
 
   .lg\:pt-10 {
@@ -260,18 +304,24 @@ a.font-courier.text-body.text-red-600 {
   }
 
   header img {
-    max-height: 140px;
+    max-height: 160px;
+    max-width: 500px;
   }
 
   .menu-toggle img {
-    width: 50px;
-    height: 50px;
+    width: 95px;
+    height: 95px;
   }
 }
 
 @media (min-width: 1280px) {
   #home {
-    margin-top: 180px;
+    margin-top: 260px;
+  }
+
+  header img {
+    max-height: 180px;
+    max-width: 550px;
   }
 }
 
@@ -295,4 +345,306 @@ a.font-courier.text-body.text-red-600 {
 /* Text Colors Based on HTML Classes */
 .text-black {
   color: #000000;
+}
+
+/* Contact Section */
+section#contact {
+  margin-top: 1em;
+}
+
+section#contact p {
+  margin-bottom: 0;
+}
+
+/* Content Width and Spacing */
+[class*="max-w-"] {
+  width: min(95%, calc(1000px - 2em)); /* Responsive width using min() */
+  max-width: 100%;
+  margin: 0;
+  padding-left: 3px;
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1280px) {
+  [class*="max-w-"] {
+    width: 85%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .main-nav {
+    right: 70px;
+    top: 82%;
+  }
+
+  .main-nav ul {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  [class*="max-w-"] {
+    width: 95%;
+    padding: 0 15px;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 100px; /* Position below header but above hamburger */
+    right: 10px;
+    transform: none;
+    width: auto;
+    z-index: 55;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 2px;
+    margin-right: 0;
+  }
+
+  .menu-toggle {
+    margin-top: 0;
+    z-index: 54; /* Below nav but above other content */
+  }
+
+  #home {
+    margin-top: 250px;
+  }
+}
+
+/* Content Alignment */
+.main-content,
+.quote-container,
+section,
+[class*="max-w-"],
+.mx-auto,
+main > div {
+  padding-left: 3px;
+  padding-right: 2em; /* Add consistent right padding */
+  margin-left: 0;
+  margin-right: auto;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* 
+ * =============================================================
+ * RESPONSIVE BREAKPOINTS
+ * =============================================================
+ *
+ * This section contains media queries for different device sizes
+ * 
+ * Mobile breakpoint: Max-width 767px
+ * - Smaller text sizes
+ * - Single column layouts
+ * - Adjusted header and navigation for touch interfaces
+ * - Reduced spacing for smaller screens
+ *
+ * Tablet breakpoint: 768px to 1023px
+ * - Two column layouts for movie grids
+ * - Medium sized fonts and spacing
+ * - Adjusted header and navigation for mid-sized screens
+ *
+ * Desktop breakpoint: 1024px to 1279px
+ * - Three column layouts
+ * - Larger text and spacing
+ * - Full navigation experience
+ *
+ * Large Desktop breakpoint: 1280px and above
+ * - Maximum content width
+ * - Optimized spacing for large screens
+ * - Full navigation experience
+ */
+
+/* Responsive Design - Mobile First */
+@media (min-width: 768px) {
+  /* 
+   * TABLET STYLES (768px to 1023px)
+   * -------------------------------
+   * - Two column grid layout
+   * - Increased header spacing
+   * - Larger logo and menu sizes
+   */
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  #home {
+    margin-top: 220px;
+    padding-top: 10px;
+  }
+
+  header img {
+    max-height: 140px;
+    max-width: 450px;
+  }
+
+  .menu-toggle img {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* 
+   * DESKTOP STYLES (1024px to 1279px)
+   * --------------------------------
+   * - Three column grid layout
+   * - Further increased header spacing
+   * - Larger logo and menu sizes
+   * - Optimized navigation positioning
+   */
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+
+  #home {
+    margin-top: 240px;
+  }
+
+  .lg\:pt-10 {
+    padding-top: 10px;
+  }
+
+  header img {
+    max-height: 160px;
+    max-width: 500px;
+  }
+
+  .menu-toggle img {
+    width: 95px;
+    height: 95px;
+  }
+}
+
+@media (min-width: 1280px) {
+  /* 
+   * LARGE DESKTOP STYLES (1280px and above)
+   * --------------------------------------
+   * - Maximum content width
+   * - Optimal header spacing for larger screens
+   * - Largest logo size
+   */
+  #home {
+    margin-top: 260px;
+  }
+
+  header img {
+    max-height: 180px;
+    max-width: 550px;
+  }
+}
+
+/* Ultra-Responsive Breakpoints */
+/* Mobile First Design */
+@media screen and (max-width: 480px) {
+  /* Extra Small Devices */
+  body {
+    padding-right: 1em; /* Smaller padding on very small screens */
+  }
+
+  header {
+    width: calc(100% - 1em);
+  }
+
+  .main-content,
+  section,
+  [class*="max-w-"],
+  .mx-auto,
+  main > div {
+    padding-right: 1em;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(120px, 1fr)
+    ); /* Smaller columns on mobile */
+    gap: 5px;
+  }
+
+  #home {
+    margin-top: 180px;
+  }
+
+  blockquote p {
+    font-size: 16pt;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .movie-grid {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(150px, 1fr)
+    ); /* Smaller columns on mobile */
+  }
+}
+
+/* Small Devices (small phones and portrait tablets, 480px to 767px) */
+@media screen and (min-width: 480px) and (max-width: 767px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 8px;
+  }
+
+  #home {
+    margin-top: 220px;
+  }
+}
+
+/* Medium Devices (tablets, 768px to 1023px) */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 10px;
+  }
+
+  #home {
+    margin-top: 240px;
+  }
+}
+
+/* Large Devices (desktops, 1024px to 1279px) */
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+  }
+
+  #home {
+    margin-top: 260px;
+  }
+}
+
+/* Extra Large Devices (large desktops, 1280px and up) */
+@media screen and (min-width: 1280px) {
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  #home {
+    margin-top: 280px;
+  }
+
+  [class*="max-w-"] {
+    margin: 0 auto; /* Center content on very large screens */
+  }
+}
+
+/* Remove any conflicting auto-fill definitions */
+@media screen and (max-width: 640px),
+  screen and (min-width: 480px) and (max-width: 767px),
+  screen and (min-width: 768px) and (max-width: 1023px),
+  screen and (min-width: 1024px) and (max-width: 1279px),
+  screen and (min-width: 1280px) {
+  /* Override any auto-fill column definitions to ensure exact column counts */
+  .movie-grid {
+    grid-template-columns: inherit; /* Use the columns defined in the main breakpoints */
+  }
 }
