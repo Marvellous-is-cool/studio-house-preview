@@ -26,7 +26,7 @@ header h1 {
 
 header img {
   height: auto;
-  max-height: 80px; /* Increased from 60px */
+  max-height: 100px; /* Increased base size for mobile */
   width: auto;
   object-fit: contain;
   object-position: left;
@@ -36,15 +36,15 @@ header img {
   width: auto;
   display: flex;
   justify-content: flex-start;
-  padding: 5px; /* Increased from 3px */
+  padding: 8px; /* Increased padding for better touch target */
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .menu-toggle img {
-  width: 35px; /* Increased from 25px */
-  height: 35px; /* Increased from 25px */
+  width: 40px; /* Increased base size for mobile */
+  height: 40px;
 }
 
 .main-nav {
@@ -192,7 +192,6 @@ section#media-list {
   margin-top: 2px;
   margin-bottom: 3em;
   font-family: "Courier Regular", Courier, monospace;
-  /* padding-top: 12px; */
 }
 
 /* Movie Grid */
@@ -238,12 +237,12 @@ a.font-courier.text-body.text-red-600 {
   }
 
   header img {
-    max-height: 100px;
+    max-height: 120px;
   }
 
   .menu-toggle img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -261,12 +260,12 @@ a.font-courier.text-body.text-red-600 {
   }
 
   header img {
-    max-height: 120px;
+    max-height: 140px;
   }
 
   .menu-toggle img {
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
 }
 
