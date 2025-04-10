@@ -186,6 +186,10 @@ blockquote cite {
   padding-left: 5px;
 }
 
+.main-content {
+  margin-left: 4em;
+}
+
 /* Utilities */
 .text-blue-800 {
   color: #1e40af;
@@ -232,6 +236,9 @@ blockquote cite {
 @media (min-width: 768px) {
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .text-quote {
+    font-size: 11px;
   }
 }
 
