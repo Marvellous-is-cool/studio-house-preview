@@ -217,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
     movieContainer.innerHTML = movies
       .map(
         (movie) => `
-        <p class="font-courier text-body text-blue-600">${movie}</p>
+        <p class="font-courier text-body">${movie}</p>
       `
       )
       .join("");

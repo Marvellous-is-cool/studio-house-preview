@@ -4,25 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>StudioHouse</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontSize: {
-              quote: "12pt",
-              body: "10pt",
-              stars: "54pt",
-              header: "14pt",
-            },
-            fontFamily: {
-              courier: ["Courier Regular", "Courier", "monospace"],
-              arial: ["Arial", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="bg-white text-black">
     <!-- LOGO + HAMBURGER -->
@@ -95,8 +77,11 @@
         <div class="quote-container">
           <blockquote>
             <p class="font-courier italic text-quote mb-2.5">
-              "Success is not an easy fantasy game.<br />Success takes skill,
-              vision, and perseverance."
+              "Success is not an easy fantasy game.
+              <br />
+              <span class="quote-text2"
+                >Success takes skill, vision, and perseverance."</span
+              >
             </p>
             <cite class="font-arial font-black text-quote block my-10">
               Michael David McGuire<br /><span>New York</span>
