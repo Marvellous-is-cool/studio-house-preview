@@ -64,10 +64,10 @@ header {
   list-style: none;
   padding: 1rem;
   margin: 0;
-  border: 1px solid #e5e7eb;
-  border-radius: 0.25rem;
-  background-color: white;
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  /* border: 1px solid #e5e7eb; */
+  /* border-radius: 0.25rem; */
+  /* background-color: white; */
+  /* box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); */
 }
 
 .main-nav a {
@@ -86,6 +86,10 @@ header {
 /* Typography */
 .font-courier {
   font-family: "Courier Regular", Courier, monospace;
+}
+
+.font-courier-italic {
+  font-family: "Courier New Italic", Courier, monospace;
 }
 
 .font-arial {
