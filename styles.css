@@ -1,114 +1,177 @@
-/* Base styles with better width containment */
+/* =============================================================
+   Base styles with better width containment
+   ============================================================= */
 body {
   background-color: white;
   color: black;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0;
-  padding-right: 2em; /* Add right padding to entire document */
+  padding: 0 1em; /* Add right padding to entire document */
   max-width: 100%;
   width: 100%;
   overflow-x: hidden; /* Prevent horizontal scrolling */
-  box-sizing: border-box;
 }
 
 /* Ensure all elements respect border-box model */
 *,
-*:before,
-*:after {
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
-/* Header and Navigation */
+/* =============================================================
+     Header and Navigation
+     ============================================================= */
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: calc(100% - 2em); /* Adjust width accounting for padding */
-  background-color: white;
-  padding: 5px 3px;
-  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5em 1em; /* Reduced padding */
+  border-bottom: 0.5px solid #e5e7eb;
   z-index: 50;
-  overflow: hidden; /* Prevent logo overflow */
+  overflow: hidden;
+  width: calc(100% - 2em);
 }
 
 header h1 {
+  width: 100%; /* force the logo to occupy the full first row */
+  margin-bottom: 0; /* Remove extra gap between logo row and next row */
+}
+
+/* Ensure the hamburger and nav are inline in the second row */
+.menu-toggle,
+.main-nav {
+  position: static; /* remove any absolute positioning */
+  display: inline-flex;
+  vertical-align: middle;
   margin: 0;
-  padding: 0;
 }
 
-header img {
-  height: auto;
-  max-height: clamp(100px, 15vw, 180px); /* Fluid responsive height */
-  width: 100%;
-  max-width: clamp(300px, 50vw, 550px); /* Fluid responsive width */
+/* Keep a 0.3em gap between the hamburger and nav */
+.main-nav {
+  margin-left: 0.3em;
+}
+
+/* Logo */
+.site-logo {
+  margin: 0;
+  padding: 0.5em 0;
+  max-height: clamp(80px, 12vw, 160px);
+  max-width: clamp(250px, 45vw, 500px);
   object-fit: contain;
-  object-position: left;
+  object-position: left center;
+  /* Remove bottom margin since all items are inline */
 }
 
+/* Hamburger button */
 .menu-toggle {
-  position: relative;
-  display: flex;
-  padding: 3px;
-  margin-top: 5px;
+  position: static; /* remove absolute positioning */
+  display: inline-flex;
+  left: 20px;
   background: none;
   border: none;
   cursor: pointer;
+  z-index: 60;
+  margin: 0; /* remove any extra margins */
+  margin-top: 0; /* Ensure minimal gap */
 }
 
-.menu-toggle img {
-  width: 65px;
-  height: 65px;
+/* Hamburger icon */
+.hamburger-icon {
+  width: 50px; /* Increased size */
+  height: 50px;
+}
+@media (min-width: 768px) {
+  .hamburger-icon {
+    width: 65px;
+    height: 65px;
+  }
+}
+@media (min-width: 1024px) {
+  .hamburger-icon {
+    width: 75px;
+    height: 75px;
+  }
 }
 
-/* Navigation Overlay Positioning */
+/* Dropdown nav - update gap to 0.3em away from hamburger */
 .main-nav {
-  position: absolute;
-  top: 50%; /* Center vertically with hamburger */
-  right: 0; /* Position to right of hamburger */
-  transform: translateY(-50%);
-  width: auto;
+  position: static; /* remove absolute positioning */
+  margin-left: 0.3em; /* 0.3em gap from the hamburger */
   background: white;
-  z-index: 55; /* Higher than hamburger to overlay */
-  border: 1px solid #e5e7eb;
+  border: 1px solid #000; /* thin black box */
   border-radius: 4px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow: hidden;
 }
-
 .main-nav.hidden {
   display: none;
   opacity: 0;
 }
 
 .main-nav ul {
-  flex-direction: column; /* Always vertical */
-  gap: 2px;
-  padding: 5px;
+  list-style: none;
   margin: 0;
-  background: white;
-  border-left: 1px solid #e5e7eb;
-  list-style: none; /* Explicitly remove dots */
-  list-style-type: none; /* Double ensure no dots in all browsers */
+  padding: 4px 0;
 }
-
-.main-nav li {
-  list-style-image: none; /* Triple ensure no dots in older browsers */
+.main-nav li + li {
+  margin-top: 2px;
 }
 
 .main-nav a {
-  color: #1e40af;
-  font-weight: bold;
-  text-decoration: none;
   display: block;
-  padding: 1px;
+  padding: 6px 12px;
+  font-family: Arial, sans-serif; /* Arial */
+  font-weight: bold;
+  font-size: 12pt; /* ~16px */
+  color: #1e40af; /* “Ariel Blue” */
+  text-decoration: none;
+  white-space: nowrap;
   transition: background-color 0.2s;
 }
-
 .main-nav a:hover {
-  background-color: #f9fafb;
+  background-color: #f3f4f6;
 }
 
-/* Main Content Spacing */
+/* =============================================================
+     Header‑style typography
+     ============================================================= */
+/* Section headings (<h2>) */
+h2.font-arial.text-header {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14pt; /* exactly 14pt */
+  color: #1e40af; /* Blue */
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+/* Email link in “Project Submissions” */
+#submissions a[href^="mailto"] {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10pt; /* exactly 10pt */
+  color: #1e40af; /* Blue */
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 0.25em;
+}
+
+/* “Over 300 TV Shows…” line */
+.over-300 {
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12pt; /* exactly 12pt */
+  color: #000; /* Black */
+  margin-top: 0.5em;
+}
+
+/* =============================================================
+     Main Content Spacing (unchanged)
+     ============================================================= */
 .main-content {
   padding: 3px;
   margin-left: 3px;
@@ -119,6 +182,7 @@ header img {
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
+  margin-top: 0; /* Let the header’s size control the space */
 }
 
 /* Quote Section */
@@ -195,18 +259,6 @@ section {
   font-family: "Courier New", Courier, monospace;
 }
 
-/* Professional Heading Styling */
-h2.font-arial.text-header {
-  font-family: Arial, sans-serif;
-  font-size: 14pt;
-  margin-top: 0;
-  margin-bottom: 5px;
-  line-height: 1.2;
-  letter-spacing: 0.02em;
-  font-weight: bold;
-  padding-left: 3px;
-}
-
 /* Paragraph Text */
 .font-courier.text-body {
   font-family: "Courier Regular", Courier, monospace;
@@ -266,51 +318,50 @@ a.font-courier.text-body.text-red-600 {
   display: block;
 }
 
-/* Responsive Design - Maintain Left Alignment and Spacing */
+/* Responsive Design – Maintain Left Alignment & Spacing */
 @media (min-width: 768px) {
   .movie-grid {
-    grid-template-columns: repeat(2, 1fr); /* Two columns for iPad/tablet */
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
-
   #home {
     margin-top: 220px;
     padding-top: 10px;
   }
-
   header img {
     max-height: 140px;
     max-width: 450px;
   }
-
   .menu-toggle img {
     width: 85px;
     height: 85px;
+  }
+  header {
+    padding: 0.7em 1em;
   }
 }
 
 @media (min-width: 1024px) {
   .movie-grid {
-    grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
-
   #home {
     margin-top: 240px;
   }
-
   .lg\:pt-10 {
     padding-top: 10px;
   }
-
   header img {
     max-height: 160px;
     max-width: 500px;
   }
-
   .menu-toggle img {
     width: 95px;
     height: 95px;
+  }
+  header {
+    padding: 0.8em 1em;
   }
 }
 
@@ -318,7 +369,13 @@ a.font-courier.text-body.text-red-600 {
   #home {
     margin-top: 260px;
   }
-
+  header {
+    height: 220px;
+  }
+  .menu-toggle {
+    top: 130px;
+    left: 50px;
+  }
   header img {
     max-height: 180px;
     max-width: 550px;
@@ -341,27 +398,23 @@ a.font-courier.text-body.text-red-600 {
 .hidden {
   display: none;
 }
-
-/* Text Colors Based on HTML Classes */
 .text-black {
-  color: #000000;
+  color: #000;
 }
 
-/* Contact Section */
 section#contact {
   margin-top: 1em;
 }
-
 section#contact p {
   margin-bottom: 0;
 }
 
-/* Content Width and Spacing */
 [class*="max-w-"] {
-  width: min(95%, calc(1000px - 2em)); /* Responsive width using min() */
-  max-width: 100%;
+  width: 100%;
+  /* max-width: 100%; */
   margin: 0;
   padding-left: 3px;
+  padding-right: 10px;
   box-sizing: border-box;
 }
 
@@ -371,44 +424,37 @@ section#contact p {
     width: 85%;
   }
 }
-
 @media (max-width: 1024px) {
   .main-nav {
-    right: 70px;
+    right: 0.3em; /* Use same 0.3em gap */
     top: 82%;
   }
-
   .main-nav ul {
     gap: 5px;
   }
 }
-
 @media (max-width: 768px) {
   [class*="max-w-"] {
     width: 95%;
     padding: 0 15px;
   }
-
   .main-nav {
     position: fixed;
     top: 100px; /* Position below header but above hamburger */
-    right: 10px;
+    right: 0.3em; /* Updated gap */
     transform: none;
     width: auto;
     z-index: 55;
   }
-
   .main-nav ul {
     flex-direction: column;
     gap: 2px;
     margin-right: 0;
   }
-
   .menu-toggle {
     margin-top: 0;
-    z-index: 54; /* Below nav but above other content */
+    z-index: 54;
   }
-
   #home {
     margin-top: 250px;
   }
@@ -422,229 +468,120 @@ section,
 .mx-auto,
 main > div {
   padding-left: 3px;
-  padding-right: 2em; /* Add consistent right padding */
+  padding-right: 2em;
   margin-left: 0;
   margin-right: auto;
   box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
 }
 
-/* 
- * =============================================================
- * RESPONSIVE BREAKPOINTS
- * =============================================================
- *
- * This section contains media queries for different device sizes
- * 
- * Mobile breakpoint: Max-width 767px
- * - Smaller text sizes
- * - Single column layouts
- * - Adjusted header and navigation for touch interfaces
- * - Reduced spacing for smaller screens
- *
- * Tablet breakpoint: 768px to 1023px
- * - Two column layouts for movie grids
- * - Medium sized fonts and spacing
- * - Adjusted header and navigation for mid-sized screens
- *
- * Desktop breakpoint: 1024px to 1279px
- * - Three column layouts
- * - Larger text and spacing
- * - Full navigation experience
- *
- * Large Desktop breakpoint: 1280px and above
- * - Maximum content width
- * - Optimized spacing for large screens
- * - Full navigation experience
- */
-
-/* Responsive Design - Mobile First */
-@media (min-width: 768px) {
-  /* 
-   * TABLET STYLES (768px to 1023px)
-   * -------------------------------
-   * - Two column grid layout
-   * - Increased header spacing
-   * - Larger logo and menu sizes
-   */
-  .movie-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-  }
-
-  #home {
-    margin-top: 220px;
-    padding-top: 10px;
-  }
-
-  header img {
-    max-height: 140px;
-    max-width: 450px;
-  }
-
-  .menu-toggle img {
-    width: 85px;
-    height: 85px;
-  }
-}
-
-@media (min-width: 1024px) {
-  /* 
-   * DESKTOP STYLES (1024px to 1279px)
-   * --------------------------------
-   * - Three column grid layout
-   * - Further increased header spacing
-   * - Larger logo and menu sizes
-   * - Optimized navigation positioning
-   */
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-  }
-
-  #home {
-    margin-top: 240px;
-  }
-
-  .lg\:pt-10 {
-    padding-top: 10px;
-  }
-
-  header img {
-    max-height: 160px;
-    max-width: 500px;
-  }
-
-  .menu-toggle img {
-    width: 95px;
-    height: 95px;
-  }
-}
-
-@media (min-width: 1280px) {
-  /* 
-   * LARGE DESKTOP STYLES (1280px and above)
-   * --------------------------------------
-   * - Maximum content width
-   * - Optimal header spacing for larger screens
-   * - Largest logo size
-   */
-  #home {
-    margin-top: 260px;
-  }
-
-  header img {
-    max-height: 180px;
-    max-width: 550px;
-  }
-}
-
-/* Ultra-Responsive Breakpoints */
-/* Mobile First Design */
+/* Ultra‑Responsive Breakpoints */
+/* Extra Small Devices */
 @media screen and (max-width: 480px) {
-  /* Extra Small Devices */
   body {
-    padding-right: 1em; /* Smaller padding on very small screens */
+    padding: 0 0.5em;
   }
-
   header {
-    width: calc(100% - 1em);
+    width: calc(100% - 0.5em);
   }
-
   .main-content,
   section,
   [class*="max-w-"],
   .mx-auto,
   main > div {
-    padding-right: 1em;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    width: 100%;
   }
-
   .movie-grid {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(120px, 1fr)
-    ); /* Smaller columns on mobile */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 5px;
   }
-
   #home {
     margin-top: 180px;
   }
-
   blockquote p {
     font-size: 16pt;
   }
 }
 
-@media screen and (max-width: 640px) {
-  .movie-grid {
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(150px, 1fr)
-    ); /* Smaller columns on mobile */
-  }
-}
-
-/* Small Devices (small phones and portrait tablets, 480px to 767px) */
+/* Small Phones & Portrait Tablets */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 8px;
   }
-
   #home {
     margin-top: 220px;
   }
 }
 
-/* Medium Devices (tablets, 768px to 1023px) */
+/* Tablets */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 10px;
   }
-
   #home {
     margin-top: 240px;
   }
 }
 
-/* Large Devices (desktops, 1024px to 1279px) */
+/* Desktops */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
   }
-
   #home {
     margin-top: 260px;
   }
 }
 
-/* Extra Large Devices (large desktops, 1280px and up) */
+/* Large Desktops */
 @media screen and (min-width: 1280px) {
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 20px;
   }
-
   #home {
     margin-top: 280px;
   }
-
   [class*="max-w-"] {
-    margin: 0 auto; /* Center content on very large screens */
+    margin: 0 auto;
   }
 }
 
-/* Remove any conflicting auto-fill definitions */
+/* Remove conflicting auto-fill definitions */
 @media screen and (max-width: 640px),
   screen and (min-width: 480px) and (max-width: 767px),
   screen and (min-width: 768px) and (max-width: 1023px),
   screen and (min-width: 1024px) and (max-width: 1279px),
   screen and (min-width: 1280px) {
-  /* Override any auto-fill column definitions to ensure exact column counts */
   .movie-grid {
-    grid-template-columns: inherit; /* Use the columns defined in the main breakpoints */
+    grid-template-columns: inherit;
+  }
+}
+
+/* Filmography Grid Columns */
+/* Base (Mobile): 1 column */
+.movie-grid {
+  grid-template-columns: 1fr;
+}
+
+/* Tablet (iPad): 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .movie-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
   }
 }
