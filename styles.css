@@ -145,7 +145,6 @@ p.font-courier.font-bold.text-stars.text-red-600 {
 section {
   margin-top: 3px;
   margin-bottom: 4em;
-  /* padding-top: 5px; */
   padding-left: 3px;
 }
 
@@ -190,8 +189,8 @@ section#success-rate,
 section#more-info,
 section#contact,
 section#media-list {
-  margin-top: 3px;
-  margin-bottom: 4em;
+  margin-top: 2px;
+  margin-bottom: 3em;
   font-family: "Courier Regular", Courier, monospace;
   /* padding-top: 12px; */
 }
