@@ -155,7 +155,6 @@ blockquote p {
   font-style: italic;
   font-size: 12pt;
   margin-bottom: 10px;
-  line-height: 1.6;
   text-align: left;
 }
 
@@ -172,7 +171,7 @@ blockquote cite {
 /* Stars Section */
 .stars-container {
   width: 100%;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .stars-container p {
@@ -238,7 +237,7 @@ blockquote cite {
     grid-template-columns: repeat(2, 1fr);
   }
   .text-quote {
-    font-size: 11px;
+    font-size: 12px;
   }
 }
 
@@ -337,7 +336,7 @@ blockquote cite {
   padding-top: 5rem;
 }
 
-.mb-2\.5 {
+.mb-2 {
   margin-bottom: 0.625rem;
 }
 .mb-5 {
