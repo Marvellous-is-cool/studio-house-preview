@@ -16,96 +16,75 @@ body {
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 /* =============================================================
-     Header and Navigation
-     ============================================================= */
+       Header and Navigation
+       ============================================================= */
 header {
+  position: relative;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: flex-start;
-  padding: 0.5em 1em; /* Reduced padding */
+  padding: 1.5em 1em 0.5em; /* Adjusted padding */
   border-bottom: 0.5px solid #e5e7eb;
   z-index: 50;
-  overflow: hidden;
+  overflow: visible;
   width: calc(100% - 2em);
+  min-height: 180px; /* Minimum height for the header */
 }
 
 header h1 {
-  width: 100%; /* force the logo to occupy the full first row */
-  margin-bottom: 0; /* Remove extra gap between logo row and next row */
-}
-
-/* Ensure the hamburger and nav are inline in the second row */
-.menu-toggle,
-.main-nav {
-  position: static; /* remove any absolute positioning */
-  display: inline-flex;
-  vertical-align: middle;
-  margin: 0;
-}
-
-/* Keep a 0.3em gap between the hamburger and nav */
-.main-nav {
-  margin-left: 0.3em;
+  width: 100%;
+  margin: 0 0 1em 0; /* Add bottom margin to create space below logo */
 }
 
 /* Logo */
 .site-logo {
+  display: block;
   margin: 0;
-  padding: 0.5em 0;
-  max-height: clamp(80px, 12vw, 160px);
-  max-width: clamp(250px, 45vw, 500px);
+  padding: 0;
+  max-height: clamp(80px, 12vw, 120px);
+  max-width: clamp(250px, 60vw, 450px);
   object-fit: contain;
   object-position: left center;
-  /* Remove bottom margin since all items are inline */
 }
 
 /* Hamburger button */
 .menu-toggle {
-  position: static; /* remove absolute positioning */
-  display: inline-flex;
-  left: 20px;
+  position: absolute;
+  left: 1em;
+  bottom: 1em; /* Position at bottom of header */
   background: none;
   border: none;
   cursor: pointer;
   z-index: 60;
-  margin: 0; /* remove any extra margins */
-  margin-top: 0; /* Ensure minimal gap */
+  margin: 0;
+  padding: 0;
 }
 
 /* Hamburger icon */
 .hamburger-icon {
-  width: 50px; /* Increased size */
-  height: 50px;
-}
-@media (min-width: 768px) {
-  .hamburger-icon {
-    width: 65px;
-    height: 65px;
-  }
-}
-@media (min-width: 1024px) {
-  .hamburger-icon {
-    width: 75px;
-    height: 75px;
-  }
+  width: 40px;
+  height: 40px;
 }
 
-/* Dropdown nav - update gap to 0.3em away from hamburger */
+/* Dropdown nav */
 .main-nav {
-  position: static; /* remove absolute positioning */
-  margin-left: 0.3em; /* 0.3em gap from the hamburger */
+  position: absolute;
+  left: 5em; /* Position menu to the right of hamburger */
+  bottom: 1em; /* Align with hamburger */
   background: white;
-  border: 1px solid #000; /* thin black box */
+  border: 1px solid #000;
   border-radius: 4px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   z-index: 100;
   overflow: hidden;
+  transition: opacity 0.3s ease;
 }
+
 .main-nav.hidden {
   display: none;
   opacity: 0;
@@ -114,8 +93,11 @@ header h1 {
 .main-nav ul {
   list-style: none;
   margin: 0;
-  padding: 4px 0;
+  padding: 8px 0;
+  display: flex;
+  flex-direction: column;
 }
+
 .main-nav li + li {
   margin-top: 2px;
 }
@@ -123,21 +105,22 @@ header h1 {
 .main-nav a {
   display: block;
   padding: 6px 12px;
-  font-family: Arial, sans-serif; /* Arial */
+  font-family: Arial, sans-serif;
   font-weight: bold;
-  font-size: 12pt; /* ~16px */
-  color: #1e40af; /* “Ariel Blue” */
+  font-size: 12pt;
+  color: #1e40af; /* "Arial Blue" */
   text-decoration: none;
   white-space: nowrap;
   transition: background-color 0.2s;
 }
+
 .main-nav a:hover {
   background-color: #f3f4f6;
 }
 
 /* =============================================================
-     Header‑style typography
-     ============================================================= */
+       Header‑style typography
+       ============================================================= */
 /* Section headings (<h2>) */
 h2.font-arial.text-header {
   font-family: Arial, sans-serif;
@@ -150,7 +133,7 @@ h2.font-arial.text-header {
   letter-spacing: 0.02em;
 }
 
-/* Email link in “Project Submissions” */
+/* Email link in "Project Submissions" */
 #submissions a[href^="mailto"] {
   font-family: "Courier New", Courier, monospace;
   font-size: 10pt; /* exactly 10pt */
@@ -160,7 +143,7 @@ h2.font-arial.text-header {
   margin-top: 0.25em;
 }
 
-/* “Over 300 TV Shows…” line */
+/* "Over 300 TV Shows…" line */
 .over-300 {
   font-family: Arial, sans-serif;
   font-weight: bold;
@@ -170,8 +153,8 @@ h2.font-arial.text-header {
 }
 
 /* =============================================================
-     Main Content Spacing (unchanged)
-     ============================================================= */
+       Main Content Spacing
+       ============================================================= */
 .main-content {
   padding: 3px;
   margin-left: 3px;
@@ -182,7 +165,7 @@ h2.font-arial.text-header {
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
-  margin-top: 0; /* Let the header’s size control the space */
+  margin-top: 0; /* Let the header's size control the space */
 }
 
 /* Quote Section */
@@ -320,65 +303,97 @@ a.font-courier.text-body.text-red-600 {
 
 /* Responsive Design – Maintain Left Alignment & Spacing */
 @media (min-width: 768px) {
+  header {
+    min-height: 200px;
+  }
+
+  .site-logo {
+    max-height: clamp(100px, 14vw, 140px);
+    max-width: clamp(300px, 65vw, 450px);
+  }
+
+  .hamburger-icon {
+    width: 55px;
+    height: 55px;
+  }
+
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
   }
+
   #home {
     margin-top: 220px;
     padding-top: 10px;
   }
-  header img {
-    max-height: 140px;
-    max-width: 450px;
-  }
-  .menu-toggle img {
-    width: 85px;
-    height: 85px;
-  }
-  header {
-    padding: 0.7em 1em;
-  }
 }
 
 @media (min-width: 1024px) {
+  header {
+    min-height: 220px;
+  }
+
+  .site-logo {
+    max-height: clamp(120px, 16vw, 160px);
+    max-width: clamp(350px, 70vw, 500px);
+  }
+
+  .hamburger-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .menu-toggle {
+    left: 1.5em;
+    bottom: 1.2em;
+  }
+
+  .main-nav {
+    left: 6.5em;
+    bottom: 1.2em;
+  }
+
   .movie-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
+
   #home {
     margin-top: 240px;
   }
+
   .lg\:pt-10 {
     padding-top: 10px;
-  }
-  header img {
-    max-height: 160px;
-    max-width: 500px;
-  }
-  .menu-toggle img {
-    width: 95px;
-    height: 95px;
-  }
-  header {
-    padding: 0.8em 1em;
   }
 }
 
 @media (min-width: 1280px) {
+  header {
+    min-height: 240px;
+  }
+
+  .site-logo {
+    max-height: clamp(140px, 18vw, 180px);
+    max-width: clamp(400px, 75vw, 550px);
+  }
+
+  .hamburger-icon {
+    width: 75px;
+    height: 75px;
+  }
+
+  .menu-toggle {
+    left: 2em;
+    bottom: 1.5em;
+  }
+
+  .main-nav {
+    left: 8em;
+    bottom: 1.5em;
+  }
+
   #home {
     margin-top: 260px;
-  }
-  header {
-    height: 220px;
-  }
-  .menu-toggle {
-    top: 130px;
-    left: 50px;
-  }
-  header img {
-    max-height: 180px;
-    max-width: 550px;
   }
 }
 
@@ -424,39 +439,30 @@ section#contact p {
     width: 85%;
   }
 }
-@media (max-width: 1024px) {
-  .main-nav {
-    right: 0.3em; /* Use same 0.3em gap */
-    top: 82%;
-  }
-  .main-nav ul {
-    gap: 5px;
-  }
-}
+
 @media (max-width: 768px) {
   [class*="max-w-"] {
     width: 95%;
     padding: 0 15px;
   }
+
   .main-nav {
-    position: fixed;
-    top: 100px; /* Position below header but above hamburger */
-    right: 0.3em; /* Updated gap */
+    position: absolute;
+    left: 5em;
+    bottom: 1em;
     transform: none;
     width: auto;
     z-index: 55;
   }
+
   .main-nav ul {
     flex-direction: column;
     gap: 2px;
     margin-right: 0;
   }
-  .menu-toggle {
-    margin-top: 0;
-    z-index: 54;
-  }
+
   #home {
-    margin-top: 250px;
+    margin-top: 220px;
   }
 }
 
@@ -482,9 +488,32 @@ main > div {
   body {
     padding: 0 0.5em;
   }
+
   header {
-    width: calc(100% - 0.5em);
+    width: calc(100% - 1em);
+    min-height: 160px;
   }
+
+  .site-logo {
+    max-height: clamp(70px, 10vw, 90px);
+    max-width: clamp(220px, 55vw, 300px);
+  }
+
+  .hamburger-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-toggle {
+    left: 0.8em;
+    bottom: 0.8em;
+  }
+
+  .main-nav {
+    left: 4em;
+    bottom: 0.8em;
+  }
+
   .main-content,
   section,
   [class*="max-w-"],
@@ -494,13 +523,16 @@ main > div {
     padding-left: 0.5em;
     width: 100%;
   }
+
   .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-template-columns: 1fr;
     gap: 5px;
   }
+
   #home {
     margin-top: 180px;
   }
+
   blockquote p {
     font-size: 16pt;
   }
@@ -509,20 +541,22 @@ main > div {
 /* Small Phones & Portrait Tablets */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: 1fr;
     gap: 8px;
   }
+
   #home {
-    margin-top: 220px;
+    margin-top: 200px;
   }
 }
 
 /* Tablets */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
   }
+
   #home {
     margin-top: 240px;
   }
@@ -531,9 +565,10 @@ main > div {
 /* Desktops */
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
   .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
+
   #home {
     margin-top: 260px;
   }
@@ -542,25 +577,16 @@ main > div {
 /* Large Desktops */
 @media screen and (min-width: 1280px) {
   .movie-grid {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
+
   #home {
     margin-top: 280px;
   }
+
   [class*="max-w-"] {
     margin: 0 auto;
-  }
-}
-
-/* Remove conflicting auto-fill definitions */
-@media screen and (max-width: 640px),
-  screen and (min-width: 480px) and (max-width: 767px),
-  screen and (min-width: 768px) and (max-width: 1023px),
-  screen and (min-width: 1024px) and (max-width: 1279px),
-  screen and (min-width: 1280px) {
-  .movie-grid {
-    grid-template-columns: inherit;
   }
 }
 
@@ -584,4 +610,14 @@ main > div {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
+}
+
+/* Fix for the navigation menu animation */
+.main-nav {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.main-nav.hidden {
+  opacity: 0;
 }
