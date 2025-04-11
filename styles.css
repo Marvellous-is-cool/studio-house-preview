@@ -20,8 +20,8 @@ body {
 }
 
 /* =============================================================
-       Header and Navigation
-       ============================================================= */
+     Header and Navigation
+     ============================================================= */
 header {
   position: fixed;
   top: 0;
@@ -29,19 +29,16 @@ header {
   right: 0;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: center; */
   padding: 1em;
   background-color: white;
   border-bottom: 0.5px solid #e5e7eb;
   z-index: 50;
   width: 100%;
-  height: 180px; /* Fixed height for the header */
+  height: 180px; /* Increased height for larger logo */
 }
 
 header h1 {
   width: 100%;
-  /* text-align: center; */
   margin: 0;
   padding: 0;
 }
@@ -52,17 +49,26 @@ header h1 {
   margin: 0;
   margin-left: 20px;
   padding: 0;
-  max-height: 140px; /* increased base size */
-  max-width: 420px; /* increased base size */
+  max-height: 160px; /* Increased size */
+  max-width: 470px; /* Increased size */
   object-fit: contain;
   object-position: left;
+}
+
+/* Create a container for the hamburger and nav to be in same row */
+header::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 40px; /* Space for hamburger and nav */
 }
 
 /* Hamburger button */
 .menu-toggle {
   position: absolute;
-  left: 120px; /* increased left to leave a small gap from the logo */
-  bottom: 10px;
+  bottom: 20px; /* Position from bottom */
+  left: 20px; /* Align with logo margin */
   background: none;
   border: none;
   cursor: pointer;
@@ -73,15 +79,15 @@ header h1 {
 
 /* Hamburger icon */
 .hamburger-icon {
-  width: 110px; /* increased base size */
-  height: 110px; /* increased base size */
+  width: 50px; /* Increased size */
+  height: 50px; /* Increased size */
 }
 
-/* Dropdown nav */
+/* Dropdown nav - positioned in line with hamburger */
 .main-nav {
   position: absolute;
-  left: 120px; /* increased left to leave a small gap from the logo */
-  bottom: 10px;
+  bottom: 20px; /* Same as hamburger */
+  left: 80px; /* Right next to hamburger with small gap */
   background: white;
   border: 0.5px solid #000;
   border-radius: 4px;
@@ -124,8 +130,8 @@ header h1 {
 }
 
 /* =============================================================
-       Header‑style typography
-       ============================================================= */
+     Header‑style typography
+     ============================================================= */
 /* Section headings (<h2>) */
 h2.font-arial.text-header {
   font-family: Arial, sans-serif;
@@ -163,8 +169,8 @@ h2.font-arial.text-header.text-black {
 }
 
 /* =============================================================
-       Main Content Spacing
-       ============================================================= */
+     Main Content Spacing
+     ============================================================= */
 .main-content {
   padding: 1px 0;
   margin-left: 3px;
@@ -175,13 +181,14 @@ h2.font-arial.text-header.text-black {
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
-  margin-top: 180px; /* Match header height */
+  margin-top: 180px; /* Match header height exactly */
 }
 
 /* Quote Section */
 #home {
   padding-top: 0; /* no gap between header and quote */
   padding-bottom: 0;
+  margin-top: 0 !important; /* Force removal of space */
   background-color: white;
   position: relative;
 }
@@ -366,23 +373,22 @@ a.font-courier.text-body.text-red-600 {
 
   .site-logo {
     margin-left: 20px;
-    max-height: 160px; /* larger on medium devices */
-    max-width: 480px; /* larger on medium devices */
+    max-height: 180px; /* larger on medium devices */
+    max-width: 520px; /* larger on medium devices */
   }
 
   .hamburger-icon {
-    width: 130px; /* larger on medium devices */
-    height: 130px; /* larger on medium devices */
+    width: 60px; /* larger on medium devices */
+    height: 60px; /* larger on medium devices */
   }
 
   .menu-toggle {
-    left: 140px; /* adjusted gap */
-    bottom: 20px;
+    bottom: 25px;
   }
 
   .main-nav {
-    left: 110px;
-    bottom: 20px;
+    bottom: 25px;
+    left: 90px;
   }
 
   .main-content {
@@ -410,23 +416,22 @@ a.font-courier.text-body.text-red-600 {
 
   .site-logo {
     margin-left: 30px;
-    max-height: 180px; /* larger on larger screens */
-    max-width: 520px; /* larger on larger screens */
+    max-height: 200px; /* larger on larger screens */
+    max-width: 570px; /* larger on larger screens */
   }
 
   .hamburger-icon {
-    width: 150px;
-    height: 150px;
+    width: 70px;
+    height: 70px;
   }
 
   .menu-toggle {
-    left: 160px; /* adjusted gap */
-    bottom: 25px;
+    bottom: 30px;
   }
 
   .main-nav {
-    left: 130px;
-    bottom: 25px;
+    bottom: 30px;
+    left: 100px;
   }
 
   .main-content {
@@ -438,8 +443,10 @@ a.font-courier.text-body.text-red-600 {
     gap: 15px;
   }
 
-  .lg\:pt-10 {
-    padding-top: 10px;
+  /* Override Tailwind classes to remove space */
+  section.pt-16,
+  section.lg\:pt-10 {
+    padding-top: 0 !important;
   }
 
   .font-courier.font-bold.text-stars.text-red-600,
@@ -455,23 +462,22 @@ a.font-courier.text-body.text-red-600 {
 
   .site-logo {
     margin-left: 40px;
-    max-height: 200px;
-    max-width: 550px;
+    max-height: 220px;
+    max-width: 600px;
   }
 
   .hamburger-icon {
-    width: 170px;
-    height: 170px;
+    width: 80px;
+    height: 80px;
   }
 
   .menu-toggle {
-    left: 180px; /* adjusted gap */
     bottom: 30px;
   }
 
   .main-nav {
-    left: 145px;
     bottom: 30px;
+    left: 130px;
   }
 
   .main-content {
@@ -576,8 +582,8 @@ main > div {
   }
 
   .site-logo {
-    max-height: 70px;
-    max-width: 220px;
+    max-height: 100px;
+    max-width: 300px;
   }
 
   .hamburger-icon {
@@ -586,13 +592,13 @@ main > div {
   }
 
   .menu-toggle {
-    left: 15px;
     bottom: 15px;
+    left: 15px;
   }
 
   .main-nav {
-    left: 70px;
     bottom: 15px;
+    left: 70px;
   }
 
   .main-content {
@@ -635,8 +641,16 @@ main > div {
   }
 
   .site-logo {
-    max-height: 80px;
-    max-width: 260px;
+    max-height: 110px;
+    max-width: 330px;
+  }
+
+  .menu-toggle {
+    bottom: 15px;
+  }
+
+  .main-nav {
+    bottom: 15px;
   }
 
   .main-content {
@@ -712,4 +726,20 @@ main > div {
 
 .main-nav.hidden {
   opacity: 0;
+}
+
+/* Override any Tailwind margin classes to ensure no space */
+section.mt-\[300px\],
+section.lg\:mt-\[350px\],
+section.xl\:mt-\[400px\],
+section.pt-16,
+section.lg\:pt-10,
+section.pb-0 {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* JavaScript DOM-based header height calculations - override these */
+section#home[style*="margin-top"] {
+  margin-top: 0 !important;
 }
