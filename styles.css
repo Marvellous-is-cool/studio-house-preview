@@ -99,6 +99,7 @@ header {
   border: 0.1px solid #ddd;
   border-radius: 4px;
   font-size: 20px;
+  font-weight: lighter;
   overflow: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: visible;
@@ -266,6 +267,18 @@ p.font-courier.font-bold.text-stars.text-red-600 {
   color: red;
 }
 
+.name {
+  font-family: "Courier", Courier, monospace;
+  font-style: italic;
+  font-size: 14pt;
+}
+
+.font-more {
+  font-family: "Courier Regular", Courier, monospace;
+  font-style: normal;
+  font-size: 10pt;
+}
+
 /* Section Common Styling */
 section {
   margin-top: 3px;
@@ -289,7 +302,7 @@ section {
 /* Paragraph Text */
 .font-courier.text-body {
   font-family: "Courier Regular", Courier, monospace;
-  font-size: 12pt;
+  font-size: 10pt;
   margin-bottom: 3px;
   padding-left: 3px;
   /* line-height: 1.2; */
