@@ -60,15 +60,6 @@ header h1 {
   object-position: left;
 }
 
-/* Create a container for the hamburger and nav to be in same row */
-header::after {
-  content: "";
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 40px; /* Space for hamburger and nav */
-}
-
 /* Hamburger icon */
 .hamburger-icon {
   width: 50px; /* Increased size */
