@@ -1170,12 +1170,11 @@ main > div {
   .main-nav {
     position: absolute;
     background-color: white;
-    padding: 0.2em;
-    padding-top: 0.1em;
-    line-height: 0.1em;
-    font-size: 70pt;
-    margin-left: 0.5em;
-    margin-top: 0.6em;
+    padding: 0.5em;
+    line-height: 1em;
+    font-size: 25pt;
+    margin-left: 0.8em;
+    margin-top: 1.8em;
   }
 
   .main-nav ul {
@@ -1236,12 +1235,11 @@ main > div {
   .main-nav {
     position: absolute;
     background-color: white;
-    padding: 0.2em;
-    padding-top: 0.1em;
-    line-height: 0.1em;
-    font-size: 70pt;
+    padding: 0.5em;
+    line-height: 1em;
+    font-size: 25pt;
     margin-left: 0em;
-    margin-top: 0.6em;
+    margin-top: 1.8em;
   }
 
   .main-nav ul {
@@ -1301,12 +1299,11 @@ main > div {
   .main-nav {
     position: absolute;
     background-color: white;
-    padding: 0.2em;
-    padding-top: 0.1em;
-    line-height: 0.1em;
-    font-size: 70pt;
-    margin-left: -0.7em;
-    margin-top: 0.6em;
+    padding: 0.5em;
+    line-height: 1em;
+    font-size: 25pt;
+    margin-left: -2em;
+    margin-top: 1.8em;
   }
 
   .main-nav ul {
@@ -1360,18 +1357,17 @@ main > div {
   }
   .menu-toggle {
     top: 9.5em;
-    margin-left: -16.5em;
+    margin-left: -10em;
   }
 
   .main-nav {
     position: absolute;
     background-color: white;
-    padding: 0.2em;
-    padding-top: 0.1em;
-    line-height: 0.1em;
-    font-size: 70pt;
-    margin-left: -1.7em;
-    margin-top: 0.6em;
+    padding: 0.5em;
+    line-height: 1em;
+    font-size: 25pt;
+    margin-left: -2em;
+    margin-top: 1.8em;
   }
 
   .main-nav ul {
@@ -1380,7 +1376,7 @@ main > div {
 
   .stars {
     padding: 0;
-    margin: 0 -5.5em;
+    margin: 0 -4.5em;
   }
 
   section {
