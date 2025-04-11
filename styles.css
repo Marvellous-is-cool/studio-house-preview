@@ -1,3 +1,4 @@
+
 /* =============================================================
    Real 
    ============================================================= */
@@ -25,10 +26,10 @@ body {
 
 header {
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  padding: 0;
+  padding: 10px 20px;
   width: 100%;
   height: auto;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
@@ -38,9 +39,93 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  /* max-width: 1200px; */
-  padding: 10px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+/* Logo */
+.site-logo {
+  display: block;
+  max-height: 80px;
+  max-width: 200px;
+  object-fit: contain;
+  object-position: left;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.hamburger-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Dropdown nav */
+.main-nav {
+  position: absolute;
+  top: 100%;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  z-index: 100;
+  overflow: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main-nav.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+.main-nav a {
+  display: block;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  color: blue;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.main-nav a:hover {
+  background-color: #f3f4f6;
+}
+
+/* Show navigation when menu is active */
+.main-nav.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+}
+
+
 
 header h1 {
   width: 100%;
@@ -48,23 +133,6 @@ header h1 {
   padding: 0;
 }
 
-/* Logo */
-.site-logo {
-  display: block;
-  margin: 0;
-  margin-left: 20px;
-  padding: 0;
-  max-height: 160px; /* Increased size */
-  max-width: 470px; /* Increased size */
-  object-fit: contain;
-  object-position: left;
-}
-
-/* Hamburger icon */
-.hamburger-icon {
-  width: 50px; /* Increased size */
-  height: 50px; /* Increased size */
-}
 
 /* Hamburger button */
 .menu-toggle {
@@ -77,49 +145,6 @@ header h1 {
   margin-left: -14em;
 }
 
-/* Dropdown nav - positioned in line with hamburger */
-.main-nav {
-  background: white;
-  border: 0.5px solid #000;
-  border-radius: 4px;
-  z-index: 100;
-  overflow: hidden;
-  transition: opacity 0.3s ease;
-  margin-top: 15em;
-}
-
-.main-nav.hidden {
-  display: none;
-  opacity: 0;
-}
-
-.main-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0 0;
-  display: flex;
-  flex-direction: column;
-}
-
-/* .main-nav li + li {
-  margin-top: 2px;
-} */
-
-.main-nav a {
-  display: block;
-  padding: 6px 12px;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 12pt;
-  color: blue; /* "Arial Blue" */
-  text-decoration: none;
-  white-space: nowrap;
-  transition: background-color 0.2s;
-}
-
-.main-nav a:hover {
-  background-color: #f3f4f6;
-}
 
 /* =============================================================
      Header‑style typography
@@ -367,23 +392,37 @@ a.font-courier.text-body.text-red-600 {
     max-width: 520px; /* larger on medium devices */
   }
 
-  .hamburger-icon {
-    width: 60px; /* larger on medium devices */
-    height: 60px; /* larger on medium devices */
-  }
-
   .menu-toggle {
     margin-left: -18em;
   }
-  /* 
-  .main-nav {
-    bottom: 25px;
-    left: 90px;
-  } */
+  
 
   /* .main-content {
     margin-top: 100px;
   } */
+  
+    .site-logo {
+    max-height: 60px;
+    max-width: 160px;
+  }
+
+  .hamburger-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .main-nav {
+    right: 10px;
+  }
+
+  .main-nav ul {
+    padding: 5px 0;
+  }
+
+  .main-nav a {
+    padding: 8px 15px;
+    font-size: 12px;
+  }
 
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
