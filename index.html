@@ -6,26 +6,48 @@
     <title>StudioHouse</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-white text-black">
-    <!-- LOGO + HAMBURGER -->
+    <body class="bg-white text-black">
+    <!-- LOGO + HAMBURGER + NAVIGATION -->
     <header>
-      <h1>
-        <img src="src/logo.png" alt="StudioHouse Logo" class="site-logo" />
-      </h1>
-      <button class="menu-toggle">
-        <img src="src/hamburger.png" alt="Menu" class="hamburger-icon" />
-      </button>
-      <nav class="main-nav hidden">
-        <ul>
-          <li><a href="#home">HOME</a></li>
-          <li><a href="#our-approach">OUR APPROACH</a></li>
-          <li><a href="#submissions">PROJECT SUBMISSIONS</a></li>
-          <li><a href="#agent-access">AGENT ACCESS</a></li>
-          <li><a href="#contact">CONTACT</a></li>
-        </ul>
-      </nav>
+      <div class="header-content">
+        <h1>
+          <img src="src/logo.png" alt="StudioHouse Logo" class="site-logo" />
+        </h1>
+        <button class="menu-toggle">
+          <img src="src/hamburger.png" alt="Menu" class="hamburger-icon" />
+        </button>
+        <nav class="main-nav hidden">
+          <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#our-approach">OUR APPROACH</a></li>
+            <li><a href="#submissions">PROJECT SUBMISSIONS</a></li>
+            <li><a href="#agent-access">AGENT ACCESS</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
+    <!-- MAIN CONTENTS -->
+    <main class="main-content py-3">
+      <section id="home" class="home-section">
+        <div class="quote-container">
+          <blockquote>
+            <p class="font-courier-italic text-quote mb-2.5">
+              "Success is not an easy fantasy game.
+              <br />
+              <span class="quote-text2"
+                >Success takes skill, vision, and perseverance."</span
+              >
+            </p>
+            <cite class="font-arial font-black text-quote block my-10">
+              Michael David McGuire<br /><span>New York</span>
+            </cite>
+          </blockquote>
+        </div>
+      </section>
+    </main>
+    
     <!-- RED STARS -->
     <section class="w-full bg-white">
       <div class="max-w-[1200px] mx-auto pl-[5px]">
