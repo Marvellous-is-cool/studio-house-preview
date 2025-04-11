@@ -60,20 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Adjust margin based on header height
-  function adjustMargin() {
-    const headerHeight = header.offsetHeight;
-    const hero = document.querySelector("section.mt-\\[300px\\]");
-    if (window.innerWidth < 768) {
-      hero.style.marginTop = `${headerHeight + 50}px`;
-    } else {
-      hero.style.marginTop = ""; // Reset to use Tailwind classes
-    }
-  }
-
-  window.addEventListener("resize", adjustMargin);
-  adjustMargin(); // Initial adjustment
-
   // Ensure stars containers maintain consistent padding
   const starsContainers = document.querySelectorAll(".stars-container p");
   function adjustStarsAlignment() {
