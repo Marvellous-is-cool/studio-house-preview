@@ -1332,7 +1332,7 @@ main > div {
   }
 }
 
-@media (min-width: 1491px) {
+@media screen and (min-width: 1491px) {
   [class*="max-w-"] {
     width: 85%;
   }
@@ -1357,7 +1357,7 @@ main > div {
   }
   .menu-toggle {
     top: 9.5em;
-    margin-left: -10em;
+    margin-left: -16.7em;
   }
 
   .main-nav {
@@ -1366,7 +1366,7 @@ main > div {
     padding: 0.5em;
     line-height: 1em;
     font-size: 25pt;
-    margin-left: -2em;
+    margin-left: -5em;
     margin-top: 1.8em;
   }
 
@@ -1395,6 +1395,7 @@ main > div {
     gap: 5px;
   }
 }
+
 /* Fix for the navigation menu animation */
 .main-nav {
   opacity: 1;
