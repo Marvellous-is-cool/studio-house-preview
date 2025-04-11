@@ -43,6 +43,7 @@ header {
   /* padding: 10px 20px; */
   width: 100%;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
 }
 
 /* New container to stack the logo and hamburger vertically */
@@ -99,6 +100,7 @@ header {
   background: white;
   border: 0.1px solid #ddd;
   border-radius: 4px;
+  font-size: 20px;
   overflow: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   visibility: visible;
@@ -127,8 +129,6 @@ header {
   padding: 10px 20px; */
   font-family: Arial, sans-serif;
   font-weight: bold;
-  font-size: 20px;
-  /* height: 10em; */
   color: rgb(3, 3, 128);
   text-decoration: none;
   white-space: nowrap;
@@ -399,6 +399,240 @@ main > div {
 
 /* Ultra‑Responsive Breakpoints */
 /* Extra Small Devices */
+@media screen and (max-width: 450px) {
+  body {
+    padding: 0 0.5em;
+  }
+
+  header {
+    height: 165px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    bottom: 0;
+    background-color: yellowgreen;
+  }
+
+  .site-logo {
+    left: 18px;
+    top: 5px;
+    height: 85px;
+    width: 400px;
+  }
+
+  .hamburger-icon {
+    width: 90px;
+    height: 90px;
+  }
+  .menu-toggle {
+    /* adjust consistently */
+    margin-top: 0em;
+    margin-left: 1.3em;
+  }
+
+  .main-nav {
+    margin-top: 1em;
+    margin-left: 9em;
+    font-size: 12pt;
+    position: absolute;
+    background-color: white;
+    z-index: 80;
+  }
+
+  .main-nav ul {
+    padding: 0.3em;
+  }
+
+  .stars {
+    padding: 0 1em;
+    margin: 0em;
+  }
+
+  section {
+    margin-left: -1.2em;
+  }
+
+  #home {
+    margin-top: 0;
+    padding-top: 0;
+    top: 0;
+    margin-left: -1.6em;
+  }
+
+  .font-courier.font-bold.text-stars.text-red-600,
+  p.font-courier.font-bold.text-stars.text-red-600 {
+    font-size: 60pt;
+    /* padding-left: 0; */
+  }
+
+  section#our-approach p,
+  section#submissions p,
+  section#agent-access p,
+  section#filmography p,
+  section#tv-shows p,
+  section#commercials p,
+  section#success-rate p,
+  section#more-info p,
+  section#contact p,
+  section#media-list p {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  section#our-approach a,
+  section#submissions a,
+  section#agent-access a,
+  section#filmography a,
+  section#tv-shows a,
+  section#commercials a,
+  section#success-rate a,
+  section#more-info a,
+  section#contact a,
+  section#media-list a {
+    padding-left: 0;
+    margin-left: 0;
+    color: rgb(3, 3, 128);
+  }
+
+  .main-content,
+  section,
+  [class*="max-w-"],
+  .mx-auto,
+  main > div {
+    width: 100%;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  blockquote p {
+    margin-top: 0;
+    font-size: 16pt;
+  }
+
+  .quote-text2 {
+    margin-left: 2em;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  body {
+    padding: 0 0.5em;
+  }
+
+  header {
+    height: 165px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    bottom: 0;
+    background-color: yellowgreen;
+  }
+
+  .site-logo {
+    left: 18px;
+    top: 5px;
+    height: 95px;
+    width: 430px;
+  }
+
+  .hamburger-icon {
+    width: 90px;
+    height: 90px;
+  }
+  .menu-toggle {
+    /* adjust consistently */
+    margin-top: 0em;
+    margin-left: 1.3em;
+  }
+
+  .main-nav {
+    margin-top: 1em;
+    margin-left: 9em;
+    font-size: 12pt;
+    position: absolute;
+    background-color: white;
+    z-index: 80;
+  }
+
+  .main-nav ul {
+    padding: 0.3em;
+  }
+
+  .stars {
+    padding: 0 1em;
+    margin: 0em;
+  }
+
+  section {
+    margin-left: -1.2em;
+  }
+
+  #home {
+    margin-top: 0;
+    padding-top: 0;
+    top: 0;
+    margin-left: -1.6em;
+  }
+
+  .font-courier.font-bold.text-stars.text-red-600,
+  p.font-courier.font-bold.text-stars.text-red-600 {
+    font-size: 60pt;
+    /* padding-left: 0; */
+  }
+
+  section#our-approach p,
+  section#submissions p,
+  section#agent-access p,
+  section#filmography p,
+  section#tv-shows p,
+  section#commercials p,
+  section#success-rate p,
+  section#more-info p,
+  section#contact p,
+  section#media-list p {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  section#our-approach a,
+  section#submissions a,
+  section#agent-access a,
+  section#filmography a,
+  section#tv-shows a,
+  section#commercials a,
+  section#success-rate a,
+  section#more-info a,
+  section#contact a,
+  section#media-list a {
+    padding-left: 0;
+    margin-left: 0;
+    color: rgb(3, 3, 128);
+  }
+
+  .main-content,
+  section,
+  [class*="max-w-"],
+  .mx-auto,
+  main > div {
+    width: 100%;
+  }
+
+  .movie-grid {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  blockquote p {
+    margin-top: 0;
+    font-size: 16pt;
+  }
+
+  .quote-text2 {
+    margin-left: 2em;
+  }
+}
+
 @media screen and (max-width: 480px) {
   body {
     padding: 0 0.5em;
