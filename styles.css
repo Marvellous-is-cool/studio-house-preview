@@ -25,8 +25,8 @@ body {
 
 header {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   background-color: white;
   padding: 0;
   width: 100%;
@@ -38,7 +38,7 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   padding: 10px;
 }
 
@@ -69,36 +69,32 @@ header::after {
   height: 40px; /* Space for hamburger and nav */
 }
 
-/* Hamburger button */
-.menu-toggle {
-  position: absolute;
-  bottom: 20px; /* Position from bottom */
-  left: 20px; /* Align with logo margin */
-  background: none;
-  border: none;
-  cursor: pointer;
-  z-index: 60;
-  margin: 0;
-  padding: 0;
-}
-
 /* Hamburger icon */
 .hamburger-icon {
   width: 50px; /* Increased size */
   height: 50px; /* Increased size */
 }
 
+/* Hamburger button */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 60;
+  margin-top: 9em;
+  padding: 0;
+  margin-left: -14em;
+}
+
 /* Dropdown nav - positioned in line with hamburger */
 .main-nav {
-  position: absolute;
-  bottom: 20px; /* Same as hamburger */
-  left: 80px; /* Right next to hamburger with small gap */
   background: white;
   border: 0.5px solid #000;
   border-radius: 4px;
   z-index: 100;
   overflow: hidden;
   transition: opacity 0.3s ease;
+  margin-top: 15em;
 }
 
 .main-nav.hidden {
@@ -109,14 +105,14 @@ header::after {
 .main-nav ul {
   list-style: none;
   margin: 0;
-  padding: 8px 0;
+  padding: 0 0;
   display: flex;
   flex-direction: column;
 }
 
-.main-nav li + li {
+/* .main-nav li + li {
   margin-top: 2px;
-}
+} */
 
 .main-nav a {
   display: block;
@@ -177,7 +173,6 @@ h2.font-arial.text-header.text-black {
      Main Content Spacing
      ============================================================= */
 .main-content {
-  padding: 1px 0;
   margin-left: 3px;
   width: 100%;
   max-width: 100%;
@@ -186,7 +181,6 @@ h2.font-arial.text-header.text-black {
   margin-left: 0;
   margin-right: 0;
   box-sizing: border-box;
-  margin-top: 180px; /* Match header height exactly */
 }
 
 /* Quote Section */
@@ -377,7 +371,7 @@ a.font-courier.text-body.text-red-600 {
   }
 
   .site-logo {
-    margin-left: 20px;
+    margin-left: 10px;
     max-height: 180px; /* larger on medium devices */
     max-width: 520px; /* larger on medium devices */
   }
@@ -388,17 +382,17 @@ a.font-courier.text-body.text-red-600 {
   }
 
   .menu-toggle {
-    bottom: 25px;
+    margin-left: -18em;
   }
-
+  /* 
   .main-nav {
     bottom: 25px;
     left: 90px;
-  }
+  } */
 
-  .main-content {
-    margin-top: 200px;
-  }
+  /* .main-content {
+    margin-top: 100px;
+  } */
 
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -431,17 +425,17 @@ a.font-courier.text-body.text-red-600 {
   }
 
   .menu-toggle {
-    bottom: 30px;
+    margin-left: -20em;
   }
 
-  .main-nav {
+  /* .main-nav {
     bottom: 30px;
     left: 100px;
-  }
+  } */
 
-  .main-content {
+  /* .main-content {
     margin-top: 220px;
-  }
+  } */
 
   .movie-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -477,17 +471,17 @@ a.font-courier.text-body.text-red-600 {
   }
 
   .menu-toggle {
-    bottom: 30px;
+    margin-left: -18em;
   }
 
-  .main-nav {
+  /* .main-nav {
     bottom: 30px;
     left: 130px;
-  }
+  } */
 
-  .main-content {
+  /* .main-content {
     margin-top: 240px;
-  }
+  } */
 
   blockquote p {
     font-size: 22pt;
@@ -597,18 +591,13 @@ main > div {
   }
 
   .menu-toggle {
-    bottom: 15px;
-    left: 15px;
+    margin-left: -22em;
   }
 
-  .main-nav {
+  /* .main-nav {
     bottom: 15px;
     left: 70px;
-  }
-
-  .main-content {
-    margin-top: 160px;
-  }
+  } */
 
   .main-content,
   section,
@@ -651,16 +640,16 @@ main > div {
   }
 
   .menu-toggle {
-    bottom: 15px;
+    margin-left: -18em;
   }
 
-  .main-nav {
+  /* .main-nav {
     bottom: 15px;
-  }
+  } */
 
-  .main-content {
+  /* .main-content {
     margin-top: 170px;
-  }
+  } */
 
   .movie-grid {
     grid-template-columns: 1fr;
@@ -748,4 +737,3 @@ section.pb-0 {
 section#home[style*="margin-top"] {
   margin-top: 0 !important;
 }
-
