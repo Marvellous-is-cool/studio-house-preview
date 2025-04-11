@@ -1,15 +1,15 @@
 /* =============================================================
-   Base styles with better width containment
+   Real 
    ============================================================= */
+
 body {
   background-color: white;
   color: black;
   font-family: Arial, sans-serif;
   margin: 0;
-  padding: 0 1em; /* Add right padding to entire document */
-  max-width: 100%;
+  padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 /* Ensure all elements respect border-box model */
@@ -22,19 +22,24 @@ body {
 /* =============================================================
      Header and Navigation
      ============================================================= */
+
 header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
   display: flex;
-  flex-direction: column;
-  padding: 1em;
+  justify-content: center;
+  align-items: center;
   background-color: white;
-  border-bottom: 0.5px solid #e5e7eb;
-  z-index: 50;
+  padding: 0;
   width: 100%;
-  height: 180px; /* Increased height for larger logo */
+  height: auto;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 10px;
 }
 
 header h1 {
@@ -743,3 +748,4 @@ section.pb-0 {
 section#home[style*="margin-top"] {
   margin-top: 0 !important;
 }
+
