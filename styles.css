@@ -7,6 +7,10 @@
   --header-height: 180px;
 }
 
+.spe {
+  line-height: 0vh;
+}
+
 body {
   background-color: white;
   color: black;
@@ -164,7 +168,7 @@ h2.font-arial.text-header {
   margin-top: 0;
   margin-bottom: 0.5em;
   line-height: 1.2;
-  letter-spacing: 0.02em;
+  /* letter-spacing: 0.02em; */
 }
 
 /* Plain black headers */
@@ -659,6 +663,16 @@ main > div {
     top: 5px;
     height: 95px;
     width: 430px;
+  }
+
+  .spe {
+    width: 100%;
+    line-height: 1.5vh;
+  }
+
+  .spe::after {
+    content: "";
+    line-height: 0vh;
   }
 
   .hamburger-icon {
