@@ -4,17 +4,12 @@
 
 /* Add custom properties for header height */
 :root {
-  --header-height: 180px;
-}
-
-.spe {
-  line-height: 0vh;
+  --header-height: 260px;
 }
 
 body {
   background-color: white;
   color: black;
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -70,10 +65,10 @@ header {
 .site-logo {
   display: block;
   position: absolute;
-  max-height: 80px;
-  max-width: 160px;
+  /* height: 10px;
+  width: 160px; */
   left: 8px; /* Add this to control left positioning */
-  top: 10px;
+  top: 1px;
   object-fit: contain;
   object-position: left;
 }
@@ -87,8 +82,8 @@ header {
   padding: 0;
   display: flex;
   z-index: 55;
-  margin-top: 9em;
-  margin-left: -12em;
+  /* margin-top: 9em;
+  margin-left: -12em; */
 }
 
 .hamburger-icon {
@@ -102,7 +97,7 @@ header {
   background: white;
   border: 0.1px solid #ddd;
   border-radius: 4px;
-  font-size: 20px;
+  /* font-size: 20px; */
   font-weight: lighter;
   overflow: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -119,8 +114,7 @@ header {
 
 .main-nav ul {
   list-style: none;
-  margin: 0;
-  /* padding: 3px 0; */
+  margin: 1em;
 }
 
 .main-nav li {
@@ -138,6 +132,10 @@ header {
   white-space: nowrap;
   transition: background-color 0.2s;
   font-weight: 600;
+}
+
+.text-black {
+  color: #000; /* Black */
 }
 
 .main-nav a:hover {
@@ -161,10 +159,6 @@ header h1 {
      ============================================================= */
 /* Section headings (<h2>) */
 h2.font-arial.text-header {
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 14pt; /* exactly 14pt */
-  color: rgb(3, 3, 128); /* rgb(3, 3, 128); */
   margin-top: 0;
   margin-bottom: 0.5em;
   line-height: 1.2;
@@ -172,27 +166,21 @@ h2.font-arial.text-header {
 }
 
 /* Plain black headers */
-h2.font-arial.text-header.text-black {
+h2.font-arial.text-header {
   color: #000; /* Black */
 }
 
-/* Email link in "Project Submissions" */
-#submissions a[href^="mailto"] {
-  font-family: "Courier Regular", Courier, monospace;
-  font-size: 10pt; /* exactly 10pt */
-  color: rgb(3, 3, 128); /* rgb(3, 3, 128); */
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 0.25em;
+#submissions a[href^="mailto"]:hover {
+  text-decoration: underline;
 }
 
 /* "Over 300 TV Shows…" line */
 .over-300 {
   font-family: Arial, sans-serif;
   font-weight: bold;
-  font-size: 12pt; /* exactly 12pt */
+  font-size: 14pt;
   color: #000; /* Black */
-  margin-top: 0.5em;
+  margin-top: 4em;
 }
 
 /* =============================================================
@@ -225,6 +213,10 @@ h2.font-arial.text-header.text-black {
   padding-right: 3px;
 }
 
+.quote-container blockquote {
+  text-align: left;
+}
+
 .quote-container {
   width: 100%;
   padding-left: 3px;
@@ -238,21 +230,17 @@ blockquote {
 blockquote p {
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
-  font-size: 18pt;
+  font-size: 12pt;
   line-height: 1.3;
 }
 
-.quote-text2 {
-  margin-left: 4em;
-}
-
-blockquote cite {
-  font-family: Arial, sans-serif;
-  font-weight: 900;
-  font-size: 14pt;
-  display: block;
-  margin-top: 2px;
+.quote-author {
+  font-family: "Arial Black", Arial, sans-serif;
+  font-weight: bold;
   font-style: normal;
+  font-size: 12pt; /* Match this to your quote size */
+  display: block;
+  margin-top: 1em;
 }
 
 .stars {
@@ -260,8 +248,7 @@ blockquote cite {
 }
 
 /* Red stars separator */
-.font-courier.font-bold.text-stars.text-red-600,
-p.font-courier.font-bold.text-stars.text-red-600 {
+.text-stars {
   font-family: "Courier New", Courier, monospace;
   font-size: 72pt;
   font-weight: bold;
@@ -269,12 +256,6 @@ p.font-courier.font-bold.text-stars.text-red-600 {
   margin: 0;
   padding: 0; /* Removed all spacing */
   color: red;
-}
-
-.name {
-  font-family: "Courier", Courier, monospace;
-  font-style: italic;
-  font-size: 14pt;
 }
 
 .font-more {
@@ -318,6 +299,39 @@ p.font-courier.text-body.text-blue-800 {
   color: rgb(3, 3, 128);
 }
 
+section#our-approach h2,
+section#submissions h2,
+section#agent-access h2,
+section#filmography h2,
+section#tv-shows h2,
+section#commercials h2,
+section#success-rate h2,
+section#more-info h2,
+section#contact h2,
+section#media-list h2 {
+  color: rgb(3, 3, 128);
+  font-family: "Arial Black", Arial, sans-serif;
+  font-size: 14pt;
+}
+
+section#filmography h2 {
+  color: black;
+}
+
+section#our-approach p,
+section#submissions p,
+section#agent-access p,
+section#filmography p,
+section#tv-shows p,
+section#commercials p,
+section#success-rate p,
+section#more-info p,
+section#contact p,
+section#media-list p {
+  font-family: "Courier Regular", Courier, monospace;
+  font-size: 12pt;
+}
+
 /* Reduce section divider spacing */
 section#our-approach,
 section#submissions,
@@ -331,7 +345,6 @@ section#contact,
 section#media-list {
   margin-top: 2px;
   margin-bottom: 3em;
-  font-family: "Courier Regular", Courier, monospace;
 }
 
 /* Add appropriate spacing and margin for each section */
@@ -353,10 +366,39 @@ section#media-list {
   padding-top: 15px;
 }
 
+section#more-info {
+  margin-top: 6em;
+}
+
+section#contact {
+  margin-top: 4em;
+}
+
+section#contact img {
+  width: 360px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 1em;
+}
+
+section#media-list {
+  font-family: "Courier New", Courier, monospace;
+}
+
+hr.short-red-bar {
+  border: none;
+  border-top: 3px solid rgba(255, 0, 0, 0.932);
+  width: 18px;
+  margin: -2em 0 0 0;
+  padding: 0;
+  position: absolute;
+}
+
 /* Movie Grid */
 .movie-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Single column for mobile */
+  grid-template-columns: 1fr; /* Mobile = 1 column */
   padding-left: 3px;
   width: 100%;
 }
@@ -366,15 +408,8 @@ section#media-list {
   padding: 0;
   font-family: "Courier Regular", Courier, monospace;
   color: rgb(3, 3, 128);
-}
-
-/* Horizontal Red Line */
-hr.border.border-red-600 {
-  border: none;
-  border-top: 4px solid rgba(255, 0, 0, 0.932);
-  margin: 5px 0;
-  width: 24px;
-  padding: 0;
+  font-size: 12pt;
+  line-height: 1.2;
 }
 
 /* Links */
@@ -392,6 +427,10 @@ a.font-courier.text-body.text-red-600 {
 }
 #phoneNumber:hover {
   color: rgb(3, 3, 128);
+}
+
+.for-link:hover {
+  text-decoration: underline;
 }
 
 /* Transitions for hover effects */
@@ -414,6 +453,29 @@ main > div {
 
 /* Ultra‑Responsive Breakpoints */
 /* Extra Small Devices */
+@media screen and (min-width: 200px) and (max-width: 350px) {
+  .site-logo {
+    max-height: 820px;
+    max-width: 320px;
+    margin-top: -2em;
+  }
+
+  .main-content {
+    margin: 13em 0;
+    padding: 0;
+  }
+
+  .hamburger-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .main-nav ul {
+    margin-top: 1em;
+  }
+}
+
+/* For very small phones (320-360px) */
 @media (max-width: 360px) {
   body {
     padding: 0 0.5em;
@@ -427,20 +489,22 @@ main > div {
   }
 
   .site-logo {
-    left: 8px;
-    top: 4px;
-    height: 30px;
-    width: 10px;
+    height: 300px;
+    width: 300px;
+    top: -100px;
+    left: 10px;
+    padding: 0;
+    margin: 0;
   }
 
   .hamburger-icon {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
   }
+
   .menu-toggle {
-    /* adjust consistently */
     margin-top: -1em;
-    margin-left: 1.3em;
+    margin-left: 0.5em;
   }
 
   .main-nav {
@@ -472,10 +536,8 @@ main > div {
     margin-left: -1.6em;
   }
 
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
+  .text-stars {
     font-size: 60pt;
-    /* padding-left: 0; */
   }
 
   section#our-approach p,
@@ -517,16 +579,46 @@ main > div {
 
   .movie-grid {
     grid-template-columns: 1fr;
-    gap: 1px;
+    gap: 1pt;
   }
 
   blockquote p {
     margin-top: 0;
-    font-size: 16pt;
   }
 
   .quote-text2 {
     margin-left: 2em;
+  }
+}
+
+/* For slightly larger small phones (360-380px) */
+@media (min-width: 361px) and (max-width: 449px) {
+  .site-logo {
+    height: 300px;
+    width: 300px;
+    top: -100px;
+    left: 10px;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Navigation menu adjustments */
+  .main-nav {
+    position: absolute;
+    left: -6em;
+    right: 0;
+    margin: 0;
+    font-size: 14px;
+    overflow-y: auto; /* Add scroll if needed */
+  }
+
+  .main-nav ul {
+    margin-top: 1em;
+  }
+
+  .main-content {
+    margin: 13em 0;
+    padding: 0;
   }
 }
 
@@ -543,33 +635,26 @@ main > div {
   }
 
   .site-logo {
-    left: 18px;
-    top: 5px;
-    height: 85px;
-    width: 400px;
+    max-height: 900px;
+    max-width: 350px;
+    margin-left: 0.5em;
   }
 
   .hamburger-icon {
     width: 90px;
     height: 90px;
   }
+
   .menu-toggle {
     /* adjust consistently */
-    margin-top: 0em;
-    margin-left: 1.3em;
-  }
-
-  .main-nav {
     margin-top: 1em;
-    margin-left: 9em;
-    font-size: 12pt;
-    position: absolute;
-    background-color: white;
-    z-index: 80;
+    margin-left: 1em;
+    /* position: absolute; */
   }
 
-  .main-nav ul {
-    padding: 0.3em;
+  .main-content {
+    margin: 12em 0;
+    padding: 0;
   }
 
   .stars {
@@ -586,10 +671,14 @@ main > div {
     padding-top: 0;
     top: 0;
     margin-left: -1.6em;
+    /* position: absolute; */
   }
 
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
+  .nav {
+    margin-left: -5.3em;
+  }
+
+  .text-stars {
     font-size: 60pt;
     /* padding-left: 0; */
   }
@@ -633,12 +722,11 @@ main > div {
 
   .movie-grid {
     grid-template-columns: 1fr;
-    gap: 1px;
+    gap: 1pt;
   }
 
   blockquote p {
     margin-top: 0;
-    font-size: 16pt;
   }
 
   .quote-text2 {
@@ -659,20 +747,9 @@ main > div {
   }
 
   .site-logo {
-    left: 18px;
-    top: 5px;
-    height: 95px;
-    width: 430px;
-  }
-
-  .spe {
-    width: 100%;
-    line-height: 1.5vh;
-  }
-
-  .spe::after {
-    content: "";
-    line-height: 0vh;
+    max-height: 950px;
+    max-width: 400px;
+    margin-left: 0.3em;
   }
 
   .hamburger-icon {
@@ -683,6 +760,15 @@ main > div {
     /* adjust consistently */
     margin-top: 0em;
     margin-left: 1.3em;
+  }
+
+  .nav {
+    margin-left: -5.3em;
+  }
+
+  .main-content {
+    margin: 13em 0;
+    padding: 0;
   }
 
   .main-nav {
@@ -714,8 +800,7 @@ main > div {
     margin-left: -1.6em;
   }
 
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
+  .text-stars {
     font-size: 60pt;
     /* padding-left: 0; */
   }
@@ -759,126 +844,11 @@ main > div {
 
   .movie-grid {
     grid-template-columns: 1fr;
-    gap: 3px;
+    gap: 1pt;
   }
 
   blockquote p {
     margin-top: 0;
-    font-size: 16pt;
-  }
-
-  .quote-text2 {
-    margin-left: 2em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  body {
-    padding: 0 0.5em;
-  }
-
-  header {
-    height: 165px;
-    margin-bottom: 0;
-    padding-bottom: 0;
-    bottom: 0;
-  }
-
-  .site-logo {
-    left: 18px;
-    top: 5px;
-    max-height: 110px;
-    max-width: 565px;
-  }
-  .hamburger-icon {
-    width: 90px;
-    height: 90px;
-  }
-  .menu-toggle {
-    /* adjust consistently */
-    margin-top: 1.2em;
-    margin-left: 1.3em;
-  }
-
-  .main-nav {
-    margin-top: 2.3em;
-    margin-left: 3em;
-    position: absolute;
-    background-color: white;
-    padding: 0.5em;
-  }
-
-  .main-nav ul {
-    padding: 0.3em;
-  }
-
-  .stars {
-    padding: 0 1em;
-    margin: 0em;
-  }
-
-  section {
-    margin-left: -1.2em;
-  }
-
-  #home {
-    margin-top: 0;
-    padding-top: 0;
-    top: 0;
-    margin-left: -1.6em;
-  }
-
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
-    font-size: 60pt;
-    /* padding-left: 0; */
-  }
-
-  section#our-approach p,
-  section#submissions p,
-  section#agent-access p,
-  section#filmography p,
-  section#tv-shows p,
-  section#commercials p,
-  section#success-rate p,
-  section#more-info p,
-  section#contact p,
-  section#media-list p {
-    padding-left: 0;
-    margin-left: 0;
-  }
-
-  section#our-approach a,
-  section#submissions a,
-  section#agent-access a,
-  section#filmography a,
-  section#tv-shows a,
-  section#commercials a,
-  section#success-rate a,
-  section#more-info a,
-  section#contact a,
-  section#media-list a {
-    padding-left: 0;
-    margin-left: 0;
-    color: rgb(3, 3, 128);
-  }
-
-  .main-content,
-  section,
-  [class*="max-w-"],
-  .mx-auto,
-  main > div {
-    width: 100%;
-  }
-
-  .movie-grid {
-    grid-template-columns: 1fr;
-    gap: 1px;
-  }
-
-  blockquote p {
-    margin-top: 0;
-    font-size: 16pt;
   }
 
   .quote-text2 {
@@ -889,14 +859,16 @@ main > div {
 /* Small Phones & Portrait Tablets */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   header {
-    height: 225px;
+    height: 252px;
   }
 
   .site-logo {
-    left: 18px;
-    top: 5px;
-    max-height: 145px;
-    max-width: 600px;
+    height: 750px;
+    width: 550px;
+    top: -300px;
+    left: 10px;
+    padding: 0;
+    margin: 0;
   }
 
   .hamburger-icon {
@@ -912,7 +884,20 @@ main > div {
 
   .movie-grid {
     grid-template-columns: 1fr;
-    gap: 2px;
+    gap: 1pt;
+  }
+
+  .main-nav ul {
+    padding: 0em;
+  }
+
+  section#contact {
+    padding-top: 4em;
+  }
+
+  section#contact img {
+    width: 90%; /* scales image nicely on mobile */
+    margin-top: 1em;
   }
 
   .stars {
@@ -923,27 +908,26 @@ main > div {
   .main-nav {
     position: absolute;
     background-color: white;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     font-size: 25px;
     margin-left: 2em;
     margin-top: 1.7em;
   }
 
-  .main-nav ul {
+  /* .main-nav ul {
     padding: 0.3em;
-  }
+  } */
 
   #home {
     margin: 0;
-    padding: 3em 0 2em 2.3em;
+    padding: 1em 0 2em 2.3em;
   }
 
   section {
     margin-left: -0.5em;
   }
 
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
+  .text-stars {
     font-size: 65pt;
     /* padding-left: 0; */
   }
@@ -981,7 +965,7 @@ main > div {
 /* Consolidated Media Queries */
 @media (min-width: 768px) {
   :root {
-    --header-height: 220px;
+    --header-height: 250px;
   }
   header {
     height: var(--header-height);
@@ -989,9 +973,9 @@ main > div {
 
   .site-logo {
     left: 18px;
-    top: 5px;
-    max-height: 145px;
-    max-width: 600px;
+    top: -35px;
+    height: 245px;
+    width: 700px;
   }
 
   .hamburger-icon {
@@ -1001,7 +985,7 @@ main > div {
 
   .menu-toggle {
     /* adjust consistently */
-    margin-top: 2em;
+    margin-top: 2.7em;
     margin-left: 1.3em;
   }
 
@@ -1014,7 +998,7 @@ main > div {
   .main-nav {
     position: absolute;
     background-color: white;
-    padding: 0.5em;
+    /* padding: 0.5em; */
     font-size: 25px;
     margin-left: 2em;
     margin-top: 1.7em;
@@ -1026,7 +1010,7 @@ main > div {
 
   #home {
     margin: 0;
-    padding: 0.2em 2em;
+    padding: 1.5em 2em;
     width: 100%;
     margin-bottom: 3em;
     font-size: 14pt;
@@ -1036,8 +1020,12 @@ main > div {
     margin-left: -0.4em;
   }
 
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr); /* For tablets */
+    gap: 1pt;
+  }
+
+  .text-stars {
     font-size: 65pt;
     /* padding-left: 0; */
   }
@@ -1070,40 +1058,34 @@ main > div {
     margin-left: 0;
     color: rgb(3, 3, 128);
   }
-
-  .movie-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4px;
-  }
-  blockquote p {
+  /* blockquote p {
     font-size: 20pt;
-  }
-  blockquote cite {
-    font-size: 16pt;
-  }
+  } */
 }
 
 @media (min-width: 1024px) {
   :root {
-    --header-height: 240px;
+    --header-height: 350px;
   }
   header {
     height: var(--header-height);
   }
   .site-logo {
-    left: 30px;
+    left: 40px;
     top: 20px;
-    max-height: 200px;
-    max-width: 570px;
+    max-height: 700px;
+    max-width: 900px;
+    position: absolute;
   }
 
   .hamburger-icon {
-    width: 120px;
-    height: 120px;
+    width: 160px;
+    height: 160px;
   }
   .menu-toggle {
     /* adjust consistently */
     margin-left: 2em;
+    margin-top: 2em;
   }
 
   .main-nav {
@@ -1119,13 +1101,22 @@ main > div {
   }
 
   .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1pt;
+    row-gap: 0.7em;
+    gap: 1pt;
+    padding-left: 0.5em;
+  }
+
+  .body-wrap {
+    width: 70%;
+    margin-left: 0.5em;
+    margin-right: auto;
   }
 
   .stars {
     padding: 0;
-    margin: 0 2.5em;
+    margin: 0 3em;
   }
 
   section {
@@ -1134,10 +1125,10 @@ main > div {
 
   #home {
     margin-left: 0.6em;
+    padding-top: 2em;
   }
 
-  .font-courier.font-bold.text-stars.text-red-600,
-  p.font-courier.font-bold.text-stars.text-red-600 {
+  .text-stars {
     font-size: 60pt;
     /* padding-left: 0; */
   }
@@ -1174,21 +1165,21 @@ main > div {
 
 @media (min-width: 1280px) {
   :root {
-    --header-height: 265px;
+    --header-height: 350px;
   }
 
   .site-logo {
     left: 30px;
     top: 10px;
-    max-height: 250px;
-    max-width: 630px;
+    max-height: 890px;
+    max-width: 1270px;
   }
   .hamburger-icon {
     width: 150px;
     height: 150px;
   }
   .menu-toggle {
-    top: 9.5em;
+    top: 14em;
     margin-left: -2em;
   }
 
@@ -1208,23 +1199,18 @@ main > div {
 
   .stars {
     padding: 0;
-    margin: 0 3.5em;
+    margin: 0 1.8em;
   }
 
   section {
-    margin-left: 1.2em;
+    margin-left: -0.6em;
   }
 
   #home {
     margin-top: 0;
     padding-top: 1em;
     top: 0;
-    margin-left: 1.6em;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    margin-left: 0em;
   }
 }
 
@@ -1235,7 +1221,7 @@ main > div {
   }
 
   :root {
-    --header-height: 265px;
+    --header-height: 380px;
   }
 
   header {
@@ -1245,15 +1231,15 @@ main > div {
   .site-logo {
     left: 30px;
     top: 10px;
-    max-height: 250px;
-    max-width: 630px;
+    max-height: 900px;
+    max-width: 1570px;
   }
   .hamburger-icon {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
   }
   .menu-toggle {
-    top: 9.5em;
+    top: 14em;
     margin-left: -5em;
   }
 
@@ -1273,23 +1259,18 @@ main > div {
 
   .stars {
     padding: 0;
-    margin: 0 -2.5em;
+    margin: 0 -0.8em;
   }
 
   section {
-    margin-left: 1.7em;
+    margin-left: 1em;
   }
 
   #home {
     margin-top: 0;
     padding-top: 1em;
     top: 0;
-    margin-left: 1.8em;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    margin-left: 1.3em;
   }
 }
 /* Consolidated max-width adjustments */
@@ -1299,26 +1280,29 @@ main > div {
   }
 
   :root {
-    --header-height: 265px;
+    --header-height: 480px;
   }
 
   header {
     height: var(--header-height);
+    background-color: red;
   }
 
   .site-logo {
-    left: 30px;
+    left: 20px;
     top: 10px;
-    max-height: 250px;
-    max-width: 630px;
+    max-height: 1800px;
+    width: 2500px;
   }
+
   .hamburger-icon {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
   }
+
   .menu-toggle {
-    top: 9.5em;
-    margin-left: -10em;
+    top: 20.5em;
+    margin-left: -10.5em;
   }
 
   .main-nav {
@@ -1326,8 +1310,8 @@ main > div {
     background-color: white;
     padding: 0.5em;
     line-height: 1em;
-    font-size: 25pt;
-    margin-left: -2em;
+    font-size: 30pt;
+    margin-left: -0.5em;
     margin-top: 1.8em;
   }
 
@@ -1337,23 +1321,18 @@ main > div {
 
   .stars {
     padding: 0;
-    margin: 0 -4.9em;
+    margin: 0 -1.7em;
   }
 
   section {
-    margin-left: -0.1em;
+    margin-left: 0em;
   }
 
   #home {
     margin-top: 0;
-    padding-top: 1em;
+    padding-top: 2em;
     top: 0;
-    margin-left: 0.1em;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    margin-left: 0.6em;
   }
 }
 
@@ -1363,7 +1342,7 @@ main > div {
   }
 
   :root {
-    --header-height: 265px;
+    --header-height: 480px;
   }
 
   header {
@@ -1371,18 +1350,20 @@ main > div {
   }
 
   .site-logo {
-    left: 30px;
+    left: 20px;
     top: 10px;
-    max-height: 250px;
-    max-width: 630px;
+    max-height: 1800px;
+    width: 2500px;
   }
+
   .hamburger-icon {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 250px;
   }
+
   .menu-toggle {
-    top: 9.5em;
-    margin-left: -16.7em;
+    top: 20.5em;
+    margin-left: -10.5em;
   }
 
   .main-nav {
@@ -1390,8 +1371,8 @@ main > div {
     background-color: white;
     padding: 0.5em;
     line-height: 1em;
-    font-size: 25pt;
-    margin-left: -5em;
+    font-size: 30pt;
+    margin-left: -0.5em;
     margin-top: 1.8em;
   }
 
@@ -1401,23 +1382,18 @@ main > div {
 
   .stars {
     padding: 0;
-    margin: 0 -5.3em;
+    margin: 0 -2em;
   }
 
   section {
-    margin-left: 0.2em;
+    margin-left: 0em;
   }
 
   #home {
     margin-top: 0;
-    padding-top: 1em;
+    padding-top: 2em;
     top: 0;
     margin-left: 0.5em;
-  }
-
-  .movie-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
   }
 }
 
@@ -1445,4 +1421,13 @@ section.pb-0 {
 /* JavaScript DOM-based header height calculations - override these */
 section#home[style*="margin-top"] {
   margin-top: 0 !important;
+}
+
+a.font-courier.text-body.text-blue-800:hover,
+a.font-courier.text-body.text-red-600:hover {
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
 }

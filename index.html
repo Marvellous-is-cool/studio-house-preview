@@ -6,56 +6,70 @@
     <title>StudioHouse</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
-    <body class="bg-white text-black">
+  <body class="bg-white text-black">
     <!-- LOGO + HAMBURGER + NAVIGATION -->
-       <header>
+    <header>
       <div class="header-content">
         <div class="logo-hamburger">
           <h1>
             <img src="src/logo.png" alt="StudioHouse Logo" class="site-logo" />
           </h1>
           <button class="menu-toggle">
-            <img src="src/hamburger.png" alt="Menu" class="hamburger-icon" />
+            <img
+              src="src/hamburger.png"
+              alt="Menu"
+              height="1008"
+              width="607"
+              class="hamburger-icon"
+            />
           </button>
-          <nav class="main-nav hidden">
-            <ul>
-              <li><a href="#home">HOME</a></li>
-              <li><a href="#our-approach">OUR APPROACH</a></li>
-              <li><a href="#submissions">PROJECT SUBMISSIONS</a></li>
-              <li><a href="#agent-access">AGENT ACCESS</a></li>
-              <li><a href="#contact">CONTACT</a></li>
-            </ul>
-          </nav>
+          <div class="nav">
+            <nav class="main-nav hidden">
+              <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#our-approach">OUR APPROACH</a></li>
+                <li><a href="#submissions">PROJECT SUBMISSIONS</a></li>
+                <li><a href="#agent-access">AGENT ACCESS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
     </header>
 
     <!-- MAIN CONTENTS -->
-    <main class="main-content" style="padding-top: 0.5em;">
-      <section id="home" class="home-section">
-        <div class="quote-container">
-          <blockquote>
-            <p class="font-courier-italic text-quote">
-              "Success is not an easy fantasy game.
-              <br />
-              <span class="quote-text2"
-                >Success takes skill, vision, and perseverance."</span
+    <main class="main-content" style="padding-top: 0.5em">
+      <div class="body-wrap">
+        <section id="home">
+          <div class="quote-container">
+            <blockquote>
+              <p
+                class="font-courier-italic text-quote"
+                style="font-weight: bold"
               >
-            </p>
-            <cite class="name text-quote block my-10">
-              Michael David McGuire<br /><span>New York</span>
-            </cite>
-          </blockquote>
-        </div>
-      </section>
-    </main>
-    
-    <!-- RED STARS -->
-    <section class="stars w-full bg-white" style="padding-top:  2em; padding-bottom: 2em;">
-      <div class="max-w-[1200px] mx-auto pl-[5px]">
-        <p class="font-courier font-bold text-stars text-red-600">***</p>
-      </div>
-    </section>
+                "Success is not an easy fantasy game.
+                <br />
+                <span class=""
+                  >Success takes skill, vision, and perseverance."</span
+                >
+              </p>
+              <cite class="quote-author" style="font-style: normal">
+                Michael David McGuire<br /><span>New York</span>
+              </cite>
+            </blockquote>
+          </div>
+        </section>
+
+        <!-- RED STARS -->
+        <section
+          class="stars w-full bg-white"
+          style="padding-top: 2em; padding-bottom: 2em"
+        >
+          <div class="max-w-[1200px] mx-auto pl-[5px]">
+            <p class="font-courier font-bold text-stars text-red-600">***</p>
+          </div>
+        </section>
 
         <!-- SECTION 1: OUR APPROACH -->
         <section id="our-approach" class="-mt-2 mb-5 pt-12">
@@ -81,15 +95,14 @@
             href="https://www.linkedin.com/in/michael-david-mcguire/"
             target="_blank"
             class="font-courier text-body text-blue-800"
+            style="font-size: 12pt"
             >Click Here</a
           >
         </section>
 
         <!-- SECTION 2: PROJECT AND SCRIPTS SUBMISSIONS -->
         <section id="submissions" class="-mt-5 mb-5 pt-12">
-          <h2 class="font-arial text-header">
-            PROJECT and SCRIPTS SUBMISSIONS
-          </h2>
+          <h2 class="font-arial text-header">PROJECT and SCRIPT SUBMISSIONS</h2>
           <p class="font-courier text-body mb-5">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sodales
             libero et nisl condimentum, vel suscipit sapien tincidunt. Nulla
@@ -104,12 +117,13 @@
             neque. Nunc eu augue at nulla feugiat sollicitudin ac nec mauris.
             Praesent
           </p>
-          <p class="font-courier text-body mb-0 spe">
+          <p class="font-courier text-body mb-0 mt-5">
             Request Detailed Submission Instructions by Email-
           </p>
           <a
             href="mailto:ProjectDevelopment@StudioHouseMedia.com?subject=Detailed%20Submission%20Request"
-            class="font-courier text-body" style="color: rgb(3, 3, 128); line-height: 0;"
+            class="font-courier text-body text-blue-800"
+            style="color: rgb(3, 3, 128)"
             >ProjectDevelopment@StudioHouseMedia.com</a
           >
         </section>
@@ -130,13 +144,13 @@
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
             aliquip ex ea commodo consequat.
           </p>
-          <p class="over-300" style="margin-top: 2em;">Over 300 TV Shows and Feature Films.</p>
         </section>
 
         <!-- SECTION 4: FILMOGRAPHY -->
-        <section id="filmography" class="-mt-5 mb-5 pt-12">
+        <section id="filmography" class="-mt-5 mb-5" style="padding-top: -4em">
+          <h2 class="over-300">Over 300 TV Shows and Feature Films.</h2>
           <div
-            class="movie-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-2"
+            class="movie-grid grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-1"
           >
             <!-- Movies will be rendered here by JavaScript in script.py -->
           </div>
@@ -144,7 +158,7 @@
 
         <!-- SECTION 5: SOAPS AND EPISODIC TV SHOWS -->
         <section id="tv-shows" class="-mt-5 mb-5 pt-12">
-          <h2 class="font-arial text-header text-black">
+          <h2 class="font-arial text-header text-black" style="color: black">
             SOAPS and EPISODIC TV SHOWS
           </h2>
           <p class="font-courier text-body text-blue-800 leading-relaxed">
@@ -161,10 +175,13 @@
 
         <!-- SECTION 6: HUNDREDS OF COMMERCIALS -->
         <section id="commercials" class="-mt-5 mb-5 pt-12">
-          <h2 class="font-arial text-header text-black">
+          <h2 class="font-arial text-header text-black" style="color: black">
             HUNDREDS of COMMERCIALS
           </h2>
-          <p class="font-courier text-body text-blue-800 leading-relaxed" style="margin-left: 0.3em;">
+          <p
+            class="font-courier text-body text-blue-800 leading-relaxed"
+            style="margin-left: 0.3em"
+          >
             Kellogg's, Kraft, 7-Up, Pepsi, Sprite, Tecate Beer, JC Penney, CNN,
             Nintendo, Mattel Toys, McDonald's, Hardees, Bojangles Chicken,
             Macaroni's Restaurant, Jungle Jim Pizza, Papa John's Pizza, Apple
@@ -195,10 +212,13 @@
 
         <!-- SECTION 7: THE BEST SUCCESS RATE IN THE INDUSTRY -->
         <section id="success-rate" class="-mt-5 mb-5 pt-12">
-          <h2 class="font-arial text-header text-black">
+          <h2 class="font-arial text-header text-black" style="color: black">
             The Best Success Rate in the Industry
           </h2>
-          <p class="font-courier text-body leading-relaxed" style="margin-left: 0.3em;">
+          <p
+            class="font-courier text-body leading-relaxed"
+            style="margin-left: 0.3em"
+          >
             Good acting and successful auditioning are two entirely and distinct
             skill sets. Our unique approach to the business of acting translates
             directly to added cold reading and audition confidence, which helps
@@ -207,12 +227,16 @@
             the $100,000!
           </p>
 
-          <p class="font-courier text-body mb-0 mt-5" style="margin-left: 0.3em;">
+          <p
+            class="font-courier text-body mb-0 mt-5"
+            style="margin-left: 0.3em"
+          >
             Request Scheduling and Direct Contact Information-
           </p>
           <a
             href="mailto:Casting@StudioHouseMedia.com?subject=Script%20Submission%20Request"
-            class="font-courier text-body text-blue-800" style="margin-left: 0.3em;"
+            class="font-courier text-body text-blue-800"
+            style="margin-left: 0.3em"
             >Casting@StudioHouseMedia.com</a
           >
         </section>
@@ -220,22 +244,19 @@
         <!-- SUB-SEC: MORE INFO -->
         <section id="more-info" class="-mt-5 mb-5 pt-12">
           <div class="flex">
-            <hr class="border border-red-600 my-5 w-24" />
+            <hr class="short-red-bar" />
           </div>
-          <h2 class="font-arial text-header text-black">
+          <h2 class="font-arial text-header text-black" style="color: black">
             Watch this Video for More Information
           </h2>
           <a
             href="https://www.imdb.com/name/nm4528542/"
             target="_blank"
-            class="font-courier text-body text-blue-800" style="line-height: 0;"
-            >Click here</a
+            class="font-courier text-body text-blue-800 for-link"
+            style="line-height: 0; font-size: 12pt"
+            >Click Here</a
           >
         </section>
-<!-- 
-        <br />
-        <br />
-        <br /> -->
 
         <!-- RED STARS -->
         <section class="stars w-full bg-white my-5">
@@ -247,18 +268,44 @@
         <!-- SECTION 8: CONTACT US -->
         <section id="contact" class="-mt-5 mb-5 pt-20">
           <h2 class="font-arial text-header">CONTACT US</h2>
-          <p class="font-courier text-body leading-relaxed" style="padding: 0; margin: 0;">
-            <img src="src/contact.jpeg" alt="" width="280" height="160" style=" margin-left: 0; padding: 0;"/>
+          <p
+            class="font-courier text-body leading-relaxed"
+            style="padding: 0; margin: 0"
+          >
+            <img
+              src="src/contact.jpeg"
+              alt=""
+              width="450"
+              height="260"
+              style="margin-left: 0; padding: 0"
+              class="contact-image"
+            />
+          </p>
         </section>
 
         <!-- SECTION 9: MEDIA LIST -->
-        <section id="media-list" class="-mt-2 mb-5 pt-12" style="margin-top: -1.5em;">
-          <h2 class="font-arial text-header text-black" style="font-weight: bold; font-size: 12pt;">For Media List</h2>
+        <section
+          id="media-list"
+          class="-mt-2 mb-5 pt-12"
+          style="margin-top: -1.5em"
+        >
+          <h2
+            class="font-arial text-header text-black"
+            style="
+              font-weight: bold;
+              font-size: 14pt;
+              font-family: 'Courier New', Courier, monospace;
+              color: black;
+            "
+          >
+            For Media Project List
+          </h2>
           <a
             href="https://www.imdb.com/name/nm4528542/"
-            target="_blank" style="color: red; line-height: 0; font-size: 10pt;"
+            target="_blank"
+            style="color: red; line-height: 0; font-size: 12pt"
             class="font-courier text-body text-red-600"
-            >Click here</a
+            >Click Here</a
           >
         </section>
       </div>
