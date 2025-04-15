@@ -605,9 +605,9 @@ main > div {
   /* Navigation menu adjustments */
   .main-nav {
     position: absolute;
-    left: -6em;
-    right: 0;
-    margin: 0;
+    margin-top: 1em;
+    margin-left: 9em;
+    /* margin: 0; */
     font-size: 14px;
     overflow-y: auto; /* Add scroll if needed */
   }
