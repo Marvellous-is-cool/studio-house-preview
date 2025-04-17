@@ -39,9 +39,7 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: white;
-  /* padding: 10px 20px; */
   width: 100%;
-  /* overflow: hidden; */
 }
 
 /* New container to stack the logo and hamburger vertically */
@@ -230,17 +228,17 @@ blockquote {
 blockquote p {
   font-family: "Courier New", Courier, monospace;
   font-style: italic;
-  font-size: 12pt;
-  line-height: 1.3;
+  font-size: 18pt;
+  line-height: 1.7;
 }
 
 .quote-author {
   font-family: "Arial Black", Arial, sans-serif;
-  font-weight: bold;
   font-style: normal;
   font-size: 12pt; /* Match this to your quote size */
   display: block;
   margin-top: 1em;
+  line-height: 1.7;
 }
 
 .stars {
@@ -332,6 +330,12 @@ section#media-list p {
   font-size: 12pt;
 }
 
+section#tv-shows p,
+section#filmography p,
+section#commercials p {
+  font-size: 14pt;
+}
+
 /* Reduce section divider spacing */
 section#our-approach,
 section#submissions,
@@ -399,6 +403,7 @@ hr.short-red-bar {
 .movie-grid {
   display: grid;
   grid-template-columns: 1fr; /* Mobile = 1 column */
+  gap: 1pt;
   padding-left: 3px;
   width: 100%;
 }
@@ -409,7 +414,7 @@ hr.short-red-bar {
   font-family: "Courier Regular", Courier, monospace;
   color: rgb(3, 3, 128);
   font-size: 12pt;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 /* Links */
@@ -1022,7 +1027,9 @@ main > div {
 
   .movie-grid {
     grid-template-columns: repeat(2, 1fr); /* For tablets */
-    gap: 1pt;
+    column-gap: 2em; /* Reduced from default gap */
+    row-gap: 1pt;
+    width: 90%;
   }
 
   .text-stars {
@@ -1102,9 +1109,9 @@ main > div {
 
   .movie-grid {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 1pt;
-    row-gap: 0.7em;
-    gap: 1pt;
+    column-gap: 1.5em;
+    row-gap: 1pt;
+    width: 85%;
     padding-left: 0.5em;
   }
 
@@ -1195,6 +1202,11 @@ main > div {
 
   .main-nav ul {
     padding: 0;
+  }
+
+  .movie-grid {
+    column-gap: 1em; /* Minimal gap for largest screens */
+    width: 80%;
   }
 
   .stars {
@@ -1423,11 +1435,56 @@ section#home[style*="margin-top"] {
   margin-top: 0 !important;
 }
 
-a.font-courier.text-body.text-blue-800:hover,
-a.font-courier.text-body.text-red-600:hover {
-  text-decoration: underline;
+a/* Add general link hover styles */
+a {
+  text-decoration: none;
+  transition: text-decoration 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Universal hover and active states */
+a:hover,
+a:active,
+a:focus {
+  text-decoration: underline !important;
+}
+
+/* Specific link styles */
+.font-courier.text-body.text-blue-800,
+.font-courier.text-body.text-red-600,
+.main-nav a,
+#submissions a[href^="mailto"],
+.for-link {
+  text-decoration: none;
+}
+
+/* Hover states for specific links */
+.font-courier.text-body.text-blue-800:hover,
+.font-courier.text-body.text-blue-800:active,
+.font-courier.text-body.text-red-600:hover,
+.font-courier.text-body.text-red-600:active,
+.main-nav a:hover,
+.main-nav a:active,
+#submissions a[href^="mailto"]:hover,
+#submissions a[href^="mailto"]:active,
+.for-link:hover,
+.for-link:active {
+  text-decoration: underline !important;
+}
+
+/* Add touch device support */
+@media (hover: none) {
+  a:active,
+  a:focus {
+    text-decoration: underline !important;
+  }
+
+  /* Add specific active states for touch devices */
+  .font-courier.text-body.text-blue-800:active,
+  .font-courier.text-body.text-red-600:active,
+  .main-nav a:active,
+  #submissions a[href^="mailto"]:active,
+  .for-link:active {
+    text-decoration: underline !important;
+  }
 }

@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Renaissance Man",
     "Head Cheerleader",
     "Witch Catcher",
-    "Stars Fell on Henrietta Junior",
+    "Stars Fell on Henrietta",
     "Good Old Boys",
     "Getting In",
     "Sister Island",
@@ -202,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     "Texas",
     "Two by Two",
     "No Turning Back",
-    "Infidelbery",
+    "Infidel",
   ];
 
   // Render movie list
